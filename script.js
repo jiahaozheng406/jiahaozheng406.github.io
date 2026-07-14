@@ -28,10 +28,10 @@ function loadImageWithFallback(image, sources, options = {}) {
 loadImageWithFallback(
   document.querySelector('.profile img'),
   [
-    'https://cdn.jsdelivr.net/gh/jiahaozheng406/jiahaozheng2005@main/profile.jpg?v=20260715',
-    'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg?v=20260715',
-    '/jiahaozheng2005/profile.jpg?v=20260715',
-    'https://avatars.githubusercontent.com/u/201983696?v=4'
+    './profile.jpg?v=20260715-local',
+    '/profile.jpg?v=20260715-local',
+    'https://cdn.jsdelivr.net/gh/jiahaozheng406/jiahaozheng406.github.io@main/profile.jpg?v=20260715-local',
+    'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng406.github.io/main/profile.jpg?v=20260715-local'
   ],
   {
     loading: 'eager',
