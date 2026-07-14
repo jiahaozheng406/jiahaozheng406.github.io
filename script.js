@@ -5,14 +5,14 @@ const root = document.documentElement;
 const profileImage = document.querySelector('.profile img');
 const interestImage = document.querySelector('.interest-photo img');
 if (profileImage) {
-  profileImage.src = 'PROFILE.jpg';
+  profileImage.src = 'PROFILE.svg';
   profileImage.onerror = () => {
     profileImage.onerror = null;
     profileImage.src = 'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg';
   };
 }
 if (interestImage) {
-  interestImage.src = 'PROFILE.jpg';
+  interestImage.src = 'PROFILE.svg';
   interestImage.alt = 'Jiahao Zheng';
   interestImage.onerror = () => {
     interestImage.onerror = null;
