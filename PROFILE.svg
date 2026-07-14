@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="605" viewBox="0 0 420 605" role="img" aria-label="Jiahao Zheng profile photo">
+  <defs>
+    <clipPath id="crop"><rect width="420" height="605" rx="0" ry="0"/></clipPath>
+  </defs>
+  <g clip-path="url(#crop)">
+    <image href="https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg" width="420" height="605" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+</svg>
