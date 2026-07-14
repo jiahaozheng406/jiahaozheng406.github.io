@@ -24,6 +24,10 @@
   line-height:1;
 }
 .mainline-step:last-child::after{display:none}
+.robot:before{
+  background-image:url('https://blogs.nvidia.com/wp-content/uploads/2023/06/franka-automatica.png')!important;
+  background-position:center 48%!important;
+}
 @media(max-width:980px){
   .mainline-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
   .mainline-step:nth-child(2)::after{display:none}
