@@ -2,23 +2,55 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 const finePointer = window.matchMedia('(pointer: fine)').matches;
 const root = document.documentElement;
 
-const profileImage = document.querySelector('.profile img');
-const interestImage = document.querySelector('.interest-photo img');
-if (profileImage) {
-  profileImage.src = 'PROFILE.svg';
-  profileImage.onerror = () => {
-    profileImage.onerror = null;
-    profileImage.src = 'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg';
+function loadImageWithFallback(image, sources, options = {}) {
+  if (!image || !sources.length) return;
+
+  let sourceIndex = 0;
+  image.decoding = 'async';
+  image.loading = options.loading || 'lazy';
+  image.referrerPolicy = 'no-referrer';
+
+  if (options.fetchPriority) image.fetchPriority = options.fetchPriority;
+  if (options.alt) image.alt = options.alt;
+
+  const loadNextSource = () => {
+    if (sourceIndex >= sources.length) {
+      image.onerror = null;
+      return;
+    }
+    image.src = sources[sourceIndex++];
   };
+
+  image.onerror = loadNextSource;
+  loadNextSource();
 }
-if (interestImage) {
-  interestImage.src = 'PROFILE.svg';
-  interestImage.alt = 'Jiahao Zheng';
-  interestImage.onerror = () => {
-    interestImage.onerror = null;
-    interestImage.src = 'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg';
-  };
-}
+
+loadImageWithFallback(
+  document.querySelector('.profile img'),
+  [
+    'https://cdn.jsdelivr.net/gh/jiahaozheng406/jiahaozheng2005@main/profile.jpg?v=20260715',
+    'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg?v=20260715',
+    '/jiahaozheng2005/profile.jpg?v=20260715',
+    'https://avatars.githubusercontent.com/u/201983696?v=4'
+  ],
+  {
+    loading: 'eager',
+    fetchPriority: 'high',
+    alt: 'Jiahao Zheng profile photo'
+  }
+);
+
+loadImageWithFallback(
+  document.querySelector('.interest-photo img'),
+  [
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/250px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?v=20260715',
+    'https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?v=20260715'
+  ],
+  {
+    loading: 'lazy',
+    alt: 'Kylian Mbappe with France national team'
+  }
+);
 
 let pointerFrame = null;
 let mouseX = window.innerWidth / 2;
