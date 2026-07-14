@@ -1,86 +1,46 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = window.matchMedia('(pointer: fine)').matches;
-
 const root = document.documentElement;
-const container = document.querySelector('.container');
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight * 0.28;
-let cursorFrame = null;
 
-function updatePointerEffects() {
+const profileImage = document.querySelector('.profile img');
+const interestImage = document.querySelector('.interest-photo img');
+if (profileImage) {
+  profileImage.src = 'PROFILE.jpg';
+  profileImage.onerror = () => {
+    profileImage.onerror = null;
+    profileImage.src = 'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg';
+  };
+}
+if (interestImage) {
+  interestImage.src = 'PROFILE.jpg';
+  interestImage.alt = 'Jiahao Zheng';
+  interestImage.onerror = () => {
+    interestImage.onerror = null;
+    interestImage.src = 'https://raw.githubusercontent.com/jiahaozheng406/jiahaozheng2005/main/profile.jpg';
+  };
+}
+
+let pointerFrame = null;
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight * 0.3;
+
+function updateSideBackground() {
   root.style.setProperty('--mouse-x', `${mouseX}px`);
   root.style.setProperty('--mouse-y', `${mouseY}px`);
 
-  if (container) {
-    const rect = container.getBoundingClientRect();
-    container.style.setProperty('--spot-x', `${mouseX - rect.left}px`);
-    container.style.setProperty('--spot-y', `${mouseY - rect.top}px`);
-  }
-
-  const cursor = document.querySelector('.cursor-orb');
-  if (cursor) {
-    cursor.style.transform = `translate3d(${mouseX - 12}px, ${mouseY - 12}px, 0)`;
-  }
-
-  cursorFrame = null;
+  const ratio = Math.max(0, Math.min(1, mouseX / Math.max(window.innerWidth, 1)));
+  const verticalRatio = Math.max(0, Math.min(1, mouseY / Math.max(window.innerHeight, 1)));
+  root.style.setProperty('--side-hue-a', `${178 + ratio * 145}`);
+  root.style.setProperty('--side-hue-b', `${326 - ratio * 118 + verticalRatio * 24}`);
+  pointerFrame = null;
 }
 
 if (finePointer && !reducedMotion) {
-  const cursor = document.createElement('div');
-  cursor.className = 'cursor-orb';
-  cursor.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(cursor);
-
   window.addEventListener('pointermove', (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY;
-    if (!cursorFrame) cursorFrame = requestAnimationFrame(updatePointerEffects);
+    if (!pointerFrame) pointerFrame = requestAnimationFrame(updateSideBackground);
   }, { passive: true });
-
-  document.querySelectorAll('a, button, .mainline-step').forEach((element) => {
-    element.addEventListener('pointerenter', () => document.body.classList.add('is-link-hover'));
-    element.addEventListener('pointerleave', () => document.body.classList.remove('is-link-hover'));
-  });
-}
-
-const interactiveCards = document.querySelectorAll('.entry, .pub-entry, .interest-card, .profile');
-
-if (finePointer && !reducedMotion) {
-  interactiveCards.forEach((card) => {
-    card.addEventListener('pointermove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const localX = event.clientX - rect.left;
-      const localY = event.clientY - rect.top;
-      const rotateY = ((localX / rect.width) - 0.5) * 4.5;
-      const rotateX = (0.5 - (localY / rect.height)) * 4.0;
-
-      card.style.setProperty('--spot-x', `${localX}px`);
-      card.style.setProperty('--spot-y', `${localY}px`);
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-    });
-
-    card.addEventListener('pointerleave', () => {
-      card.style.transform = '';
-      card.style.setProperty('--spot-x', '50%');
-      card.style.setProperty('--spot-y', '50%');
-    });
-  });
-}
-
-const revealTargets = document.querySelectorAll('.section, .pub-entry, .entry, .interest-card, .research-mainline');
-if (!reducedMotion && 'IntersectionObserver' in window) {
-  revealTargets.forEach((element) => element.classList.add('reveal'));
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -35px 0px' });
-  revealTargets.forEach((element) => observer.observe(element));
-} else {
-  revealTargets.forEach((element) => element.classList.add('is-visible'));
 }
 
 if (window.tsParticles) {
@@ -91,55 +51,45 @@ if (window.tsParticles) {
     fpsLimit: reducedMotion ? 30 : 60,
     particles: {
       number: {
-        value: reducedMotion ? 48 : 112,
-        density: { enable: true, area: 900 }
+        value: reducedMotion ? 55 : 118,
+        density: { enable: true, area: 820 }
       },
       color: {
-        value: ['#38bdf8', '#22d3ee', '#60a5fa', '#8b5cf6', '#c084fc', '#ec4899', '#f59e0b']
+        value: ['#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa', '#c084fc', '#f472b6']
       },
-      shape: {
-        type: ['circle', 'triangle', 'star']
-      },
+      shape: { type: 'circle' },
       opacity: {
-        value: { min: 0.24, max: 0.78 },
+        value: { min: 0.34, max: 0.82 },
         animation: {
           enable: !reducedMotion,
-          speed: 0.35,
-          minimumValue: 0.18,
+          speed: 0.42,
+          minimumValue: 0.24,
           sync: false
         }
       },
       size: {
-        value: { min: 1, max: 4.2 },
+        value: { min: 1.8, max: 5.2 },
         animation: {
           enable: !reducedMotion,
-          speed: 1.4,
-          minimumValue: 0.8,
+          speed: 1.1,
+          minimumValue: 1.3,
           sync: false
         }
       },
       links: {
         enable: true,
-        distance: 148,
-        color: '#a5b4fc',
-        opacity: 0.32,
-        width: 1
+        distance: 168,
+        color: 'random',
+        opacity: 0.52,
+        width: 1.8
       },
       move: {
         enable: true,
-        speed: reducedMotion ? 0.22 : 0.62,
+        speed: reducedMotion ? 0.22 : 0.66,
         direction: 'none',
         random: true,
         straight: false,
         outModes: { default: 'bounce' }
-      },
-      twinkle: {
-        particles: {
-          enable: !reducedMotion,
-          frequency: 0.035,
-          opacity: 0.95,
-          color: { value: ['#ffffff', '#fef3c7', '#e0f2fe'] }
-        }
       }
     },
     interactivity: {
@@ -149,33 +99,26 @@ if (window.tsParticles) {
           enable: finePointer && !reducedMotion,
           mode: ['grab', 'bubble', 'repulse']
         },
-        onClick: {
-          enable: finePointer && !reducedMotion,
-          mode: 'push'
-        },
         resize: true
       },
       modes: {
         grab: {
-          distance: 185,
-          links: { opacity: 0.60 }
+          distance: 205,
+          links: { opacity: 0.86 }
         },
         bubble: {
-          distance: 145,
-          size: 6.3,
-          duration: 0.35,
-          opacity: 0.9
+          distance: 165,
+          size: 7.2,
+          duration: 0.42,
+          opacity: 0.96
         },
         repulse: {
-          distance: 92,
-          duration: 0.35
-        },
-        push: {
-          quantity: 4
+          distance: 105,
+          duration: 0.42
         }
       }
     }
   });
 }
 
-updatePointerEffects();
+updateSideBackground();
