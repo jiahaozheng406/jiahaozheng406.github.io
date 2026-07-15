@@ -49,17 +49,17 @@
 }
 @media(min-width:821px){
   .interest-card{
-    grid-template-columns:150px minmax(0,1fr);
-    gap:14px;
+    grid-template-columns:100px minmax(0,1fr);
+    gap:12px;
   }
   .interest-photo{
-    width:150px;
+    width:100px;
     height:auto;
     min-height:0;
     max-height:none;
     align-self:center;
     transform:none;
-    border-radius:12px;
+    border-radius:10px;
   }
   .interest-photo img{
     display:block;
