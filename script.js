@@ -52,6 +52,24 @@ loadImageWithFallback(
   }
 );
 
+function sortNewsNewestFirst() {
+  const list = document.querySelector('.news-list');
+  if (!list) return;
+
+  const items = Array.from(list.children).map((item, index) => {
+    const dateText = item.querySelector('span')?.textContent.trim() || '';
+    const match = dateText.match(/^(\d{4})\.(\d{1,2})$/);
+    const sortValue = match ? Number(match[1]) * 100 + Number(match[2]) : -1;
+    return { item, index, sortValue };
+  });
+
+  items
+    .sort((a, b) => b.sortValue - a.sortValue || a.index - b.index)
+    .forEach(({ item }) => list.appendChild(item));
+}
+
+sortNewsNewestFirst();
+
 let pointerFrame = null;
 let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight * 0.3;
@@ -72,6 +90,124 @@ if (finePointer && !reducedMotion) {
     mouseX = event.clientX;
     mouseY = event.clientY;
     if (!pointerFrame) pointerFrame = requestAnimationFrame(updateSideBackground);
+  }, { passive: true });
+}
+
+let particleContainer = null;
+let magneticAnchors = [];
+let pointerInsideSideField = false;
+let magneticReturnFrame = null;
+let magneticReturnActive = false;
+
+function getParticles() {
+  return particleContainer?.particles?.array || [];
+}
+
+function isInVisibleSideField(clientX) {
+  const halfCenterWidth = Math.min(520, Math.max(0, window.innerWidth / 2 - 28));
+  const centerLeft = window.innerWidth / 2 - halfCenterWidth;
+  const centerRight = window.innerWidth / 2 + halfCenterWidth;
+  return clientX < centerLeft || clientX > centerRight;
+}
+
+function snapshotParticleAnchors() {
+  magneticAnchors = getParticles().map((particle) => ({
+    particle,
+    x: particle.position.x,
+    y: particle.position.y,
+    vx: Number(particle.velocity?.x) || 0,
+    vy: Number(particle.velocity?.y) || 0
+  }));
+}
+
+function stopMagneticReturn() {
+  if (magneticReturnFrame) cancelAnimationFrame(magneticReturnFrame);
+  magneticReturnFrame = null;
+  magneticReturnActive = false;
+}
+
+function startMagneticReturn() {
+  if (!particleContainer || !magneticAnchors.length || reducedMotion) return;
+
+  stopMagneticReturn();
+  magneticReturnActive = true;
+
+  const duration = 720;
+  const startedAt = performance.now();
+  const returnStarts = magneticAnchors.map((anchor) => ({
+    anchor,
+    x: anchor.particle.position.x,
+    y: anchor.particle.position.y
+  }));
+
+  const animateReturn = (now) => {
+    const t = Math.min(1, (now - startedAt) / duration);
+    const spring = 1 - Math.exp(-6.8 * t) * Math.cos(9.2 * t);
+
+    returnStarts.forEach(({ anchor, x, y }) => {
+      const particle = anchor.particle;
+      if (!particle?.position) return;
+
+      particle.position.x = x + (anchor.x - x) * spring;
+      particle.position.y = y + (anchor.y - y) * spring;
+
+      if (particle.velocity) {
+        particle.velocity.x *= 0.72;
+        particle.velocity.y *= 0.72;
+      }
+    });
+
+    if (t < 1) {
+      magneticReturnFrame = requestAnimationFrame(animateReturn);
+      return;
+    }
+
+    magneticAnchors.forEach((anchor) => {
+      const particle = anchor.particle;
+      if (!particle?.position) return;
+
+      particle.position.x = anchor.x;
+      particle.position.y = anchor.y;
+
+      if (particle.velocity) {
+        const dx = anchor.x - window.innerWidth / 2;
+        const dy = anchor.y - window.innerHeight / 2;
+        const swirlX = Math.max(-0.18, Math.min(0.18, -dy * 0.00022));
+        const swirlY = Math.max(-0.18, Math.min(0.18, dx * 0.00022));
+        particle.velocity.x = anchor.vx * 0.72 + swirlX;
+        particle.velocity.y = anchor.vy * 0.72 + swirlY;
+      }
+    });
+
+    magneticReturnFrame = null;
+    magneticReturnActive = false;
+    magneticAnchors = [];
+  };
+
+  magneticReturnFrame = requestAnimationFrame(animateReturn);
+}
+
+function handleMagneticPointerMove(event) {
+  if (!finePointer || reducedMotion || !particleContainer) return;
+
+  const isInside = isInVisibleSideField(event.clientX);
+
+  if (isInside && !pointerInsideSideField) {
+    pointerInsideSideField = true;
+    if (!magneticReturnActive) snapshotParticleAnchors();
+    else stopMagneticReturn();
+  } else if (!isInside && pointerInsideSideField) {
+    pointerInsideSideField = false;
+    startMagneticReturn();
+  }
+}
+
+if (finePointer && !reducedMotion) {
+  window.addEventListener('pointermove', handleMagneticPointerMove, { passive: true });
+  window.addEventListener('pointerleave', () => {
+    if (!pointerInsideSideField) return;
+    pointerInsideSideField = false;
+    startMagneticReturn();
   }, { passive: true });
 }
 
@@ -117,10 +253,14 @@ if (window.tsParticles) {
       },
       move: {
         enable: true,
-        speed: reducedMotion ? 0.22 : 0.66,
+        speed: reducedMotion ? 0.22 : 0.62,
         direction: 'none',
         random: true,
         straight: false,
+        attract: {
+          enable: !reducedMotion,
+          rotate: { x: 1200, y: 1200 }
+        },
         outModes: { default: 'bounce' }
       }
     },
@@ -141,15 +281,21 @@ if (window.tsParticles) {
         bubble: {
           distance: 165,
           size: 7.2,
-          duration: 0.42,
+          duration: 0.26,
           opacity: 0.96
         },
         repulse: {
-          distance: 105,
-          duration: 0.42
+          distance: 112,
+          duration: 0.22,
+          factor: 135,
+          speed: 1.25
         }
       }
     }
+  }).then((container) => {
+    particleContainer = container;
+  }).catch(() => {
+    particleContainer = null;
   });
 }
 
