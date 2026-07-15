@@ -132,7 +132,7 @@ function startMagneticReturn() {
   stopMagneticReturn();
   magneticReturnActive = true;
 
-  const duration = 720;
+  const duration = 600;
   const startedAt = performance.now();
   const returnStarts = magneticAnchors.map((anchor) => ({
     anchor,
@@ -142,7 +142,8 @@ function startMagneticReturn() {
 
   const animateReturn = (now) => {
     const t = Math.min(1, (now - startedAt) / duration);
-    const spring = 1 - Math.exp(-6.8 * t) * Math.cos(9.2 * t);
+    const spring = 1 - Math.exp(-8.8 * t) * Math.cos(11.2 * t);
+    const resumeFactor = 0.16 + 0.84 * Math.pow(t, 0.72);
 
     returnStarts.forEach(({ anchor, x, y }) => {
       const particle = anchor.particle;
@@ -152,8 +153,12 @@ function startMagneticReturn() {
       particle.position.y = y + (anchor.y - y) * spring;
 
       if (particle.velocity) {
-        particle.velocity.x *= 0.72;
-        particle.velocity.y *= 0.72;
+        const dx = anchor.x - window.innerWidth / 2;
+        const dy = anchor.y - window.innerHeight / 2;
+        const swirlX = Math.max(-0.2, Math.min(0.2, -dy * 0.00024));
+        const swirlY = Math.max(-0.2, Math.min(0.2, dx * 0.00024));
+        particle.velocity.x = anchor.vx * resumeFactor + swirlX * t;
+        particle.velocity.y = anchor.vy * resumeFactor + swirlY * t;
       }
     });
 
@@ -172,10 +177,10 @@ function startMagneticReturn() {
       if (particle.velocity) {
         const dx = anchor.x - window.innerWidth / 2;
         const dy = anchor.y - window.innerHeight / 2;
-        const swirlX = Math.max(-0.18, Math.min(0.18, -dy * 0.00022));
-        const swirlY = Math.max(-0.18, Math.min(0.18, dx * 0.00022));
-        particle.velocity.x = anchor.vx * 0.72 + swirlX;
-        particle.velocity.y = anchor.vy * 0.72 + swirlY;
+        const swirlX = Math.max(-0.2, Math.min(0.2, -dy * 0.00024));
+        const swirlY = Math.max(-0.2, Math.min(0.2, dx * 0.00024));
+        particle.velocity.x = anchor.vx * 0.96 + swirlX;
+        particle.velocity.y = anchor.vy * 0.96 + swirlY;
       }
     });
 
@@ -194,8 +199,8 @@ function handleMagneticPointerMove(event) {
 
   if (isInside && !pointerInsideSideField) {
     pointerInsideSideField = true;
-    if (!magneticReturnActive) snapshotParticleAnchors();
-    else stopMagneticReturn();
+    if (magneticReturnActive) stopMagneticReturn();
+    snapshotParticleAnchors();
   } else if (!isInside && pointerInsideSideField) {
     pointerInsideSideField = false;
     startMagneticReturn();
@@ -219,47 +224,47 @@ if (window.tsParticles) {
     fpsLimit: reducedMotion ? 30 : 60,
     particles: {
       number: {
-        value: reducedMotion ? 55 : 118,
-        density: { enable: true, area: 820 }
+        value: reducedMotion ? 64 : 152,
+        density: { enable: true, area: 760 }
       },
       color: {
         value: ['#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa', '#c084fc', '#f472b6']
       },
       shape: { type: 'circle' },
       opacity: {
-        value: { min: 0.34, max: 0.82 },
+        value: { min: 0.32, max: 0.8 },
         animation: {
           enable: !reducedMotion,
           speed: 0.42,
-          minimumValue: 0.24,
+          minimumValue: 0.23,
           sync: false
         }
       },
       size: {
-        value: { min: 1.8, max: 5.2 },
+        value: { min: 1.7, max: 4.9 },
         animation: {
           enable: !reducedMotion,
-          speed: 1.1,
-          minimumValue: 1.3,
+          speed: 1.05,
+          minimumValue: 1.25,
           sync: false
         }
       },
       links: {
         enable: true,
-        distance: 168,
+        distance: 182,
         color: 'random',
-        opacity: 0.52,
-        width: 1.8
+        opacity: 0.5,
+        width: 1.7
       },
       move: {
         enable: true,
-        speed: reducedMotion ? 0.22 : 0.62,
+        speed: reducedMotion ? 0.22 : 0.64,
         direction: 'none',
         random: true,
         straight: false,
         attract: {
           enable: !reducedMotion,
-          rotate: { x: 1200, y: 1200 }
+          rotate: { x: 1120, y: 1120 }
         },
         outModes: { default: 'bounce' }
       }
@@ -275,20 +280,20 @@ if (window.tsParticles) {
       },
       modes: {
         grab: {
-          distance: 205,
-          links: { opacity: 0.86 }
+          distance: 198,
+          links: { opacity: 0.84 }
         },
         bubble: {
-          distance: 165,
-          size: 7.2,
-          duration: 0.26,
-          opacity: 0.96
+          distance: 150,
+          size: 6.6,
+          duration: 0.2,
+          opacity: 0.93
         },
         repulse: {
-          distance: 112,
-          duration: 0.22,
-          factor: 135,
-          speed: 1.25
+          distance: 102,
+          duration: 0.18,
+          factor: 108,
+          speed: 1.2
         }
       }
     }
