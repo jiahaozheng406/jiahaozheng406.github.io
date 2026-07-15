@@ -129,9 +129,37 @@ if(window.tsParticles)tsParticles.load('tsparticles',{
 }).then(c=>particleContainer=c).catch(()=>particleContainer=null);
 
 if(finePointer&&!reducedMotion){
+  const existingCanvases=new Set(document.querySelectorAll('canvas'));
+  const promoteCursorCanvas=()=>{
+    document.querySelectorAll('canvas').forEach(canvas=>{
+      if(existingCanvases.has(canvas))return;
+      Object.assign(canvas.style,{
+        position:'fixed',
+        inset:'0',
+        width:'100vw',
+        height:'100vh',
+        pointerEvents:'none',
+        zIndex:'2147483646'
+      });
+    });
+  };
+  const cursorCanvasObserver=new MutationObserver(promoteCursorCanvas);
+  cursorCanvasObserver.observe(document.body,{childList:true,subtree:true});
   import('https://unpkg.com/cursor-effects@latest/dist/esm.js')
-    .then(({fairyDustCursor})=>new fairyDustCursor())
-    .catch(()=>{});
+    .then(({fairyDustCursor})=>{
+      new fairyDustCursor();
+      requestAnimationFrame(()=>{
+        promoteCursorCanvas();
+        requestAnimationFrame(promoteCursorCanvas);
+      });
+      setTimeout(()=>{
+        promoteCursorCanvas();
+        cursorCanvasObserver.disconnect();
+      },1000);
+    })
+    .catch(()=>{
+      cursorCanvasObserver.disconnect();
+    });
 }
 
 updateSideBackground();
