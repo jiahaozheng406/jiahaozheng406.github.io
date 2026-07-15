@@ -128,4 +128,10 @@ if(window.tsParticles)tsParticles.load('tsparticles',{
   interactivity:{detectsOn:'window',events:{onHover:{enable:finePointer&&!reducedMotion,mode:['grab','bubble','repulse']},resize:true},modes:{grab:{distance:198,links:{opacity:.84}},bubble:{distance:150,size:6.6,duration:.2,opacity:.93},repulse:{distance:102,duration:.18,factor:108,speed:1.2}}}
 }).then(c=>particleContainer=c).catch(()=>particleContainer=null);
 
+if(finePointer&&!reducedMotion){
+  import('https://unpkg.com/cursor-effects@latest/dist/esm.js')
+    .then(({fairyDustCursor})=>new fairyDustCursor())
+    .catch(()=>{});
+}
+
 updateSideBackground();
