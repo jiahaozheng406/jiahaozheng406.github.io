@@ -258,7 +258,7 @@ if (window.tsParticles) {
       },
       move: {
         enable: true,
-        speed: reducedMotion ? 0.22 : 0.64,
+        speed: reducedMotion ? 0.22 : 1.28,
         direction: 'none',
         random: true,
         straight: false,
