@@ -133,18 +133,34 @@ if(finePointer&&!reducedMotion){
   const promoteCursorCanvas=()=>{
     document.querySelectorAll('canvas').forEach(canvas=>{
       if(existingCanvases.has(canvas))return;
-      Object.assign(canvas.style,{
-        position:'fixed',
-        inset:'0',
-        width:'100vw',
-        height:'100vh',
-        pointerEvents:'none',
-        zIndex:'2147483646'
-      });
+      canvas.dataset.cursorTrailOverlay='true';
+      canvas.setAttribute('aria-hidden','true');
+      canvas.setAttribute('tabindex','-1');
+      canvas.draggable=false;
+      canvas.style.setProperty('position','fixed','important');
+      canvas.style.setProperty('inset','0','important');
+      canvas.style.setProperty('width','100vw','important');
+      canvas.style.setProperty('height','100vh','important');
+      canvas.style.setProperty('max-width','none','important');
+      canvas.style.setProperty('max-height','none','important');
+      canvas.style.setProperty('margin','0','important');
+      canvas.style.setProperty('padding','0','important');
+      canvas.style.setProperty('border','0','important');
+      canvas.style.setProperty('background','transparent','important');
+      canvas.style.setProperty('pointer-events','none','important');
+      canvas.style.setProperty('user-select','none','important');
+      canvas.style.setProperty('-webkit-user-select','none','important');
+      canvas.style.setProperty('z-index','2147483647','important');
+      canvas.style.setProperty('mix-blend-mode','normal','important');
+      canvas.style.setProperty('isolation','isolate','important');
+      canvas.style.setProperty('contain','strict','important');
+      if(canvas.parentElement!==document.documentElement){
+        document.documentElement.appendChild(canvas);
+      }
     });
   };
   const cursorCanvasObserver=new MutationObserver(promoteCursorCanvas);
-  cursorCanvasObserver.observe(document.body,{childList:true,subtree:true});
+  cursorCanvasObserver.observe(document.documentElement,{childList:true,subtree:true});
   import('https://unpkg.com/cursor-effects@latest/dist/esm.js')
     .then(({fairyDustCursor})=>{
       new fairyDustCursor();
@@ -152,10 +168,11 @@ if(finePointer&&!reducedMotion){
         promoteCursorCanvas();
         requestAnimationFrame(promoteCursorCanvas);
       });
+      setTimeout(promoteCursorCanvas,300);
       setTimeout(()=>{
         promoteCursorCanvas();
         cursorCanvasObserver.disconnect();
-      },1000);
+      },1500);
     })
     .catch(()=>{
       cursorCanvasObserver.disconnect();
