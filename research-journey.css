@@ -77,6 +77,12 @@
   background-image:url('https://blogs.nvidia.com/wp-content/uploads/2023/06/franka-automatica.png')!important;
   background-position:center 48%!important;
 }
+.mbappe-name{
+  font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+  font-weight:700;
+  font-style:italic;
+  letter-spacing:.01em;
+}
 @media(min-width:821px){
   .interest-card{
     grid-template-columns:120px minmax(0,1fr);
