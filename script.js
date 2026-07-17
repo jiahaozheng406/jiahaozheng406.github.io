@@ -179,4 +179,15 @@ if(finePointer&&!reducedMotion){
     });
 }
 
+const visitorSection=document.querySelector('.visitor-section');
+const profilePanel=document.querySelector('.profile-panel');
+if(visitorSection&&profilePanel){
+  visitorSection.classList.add('profile-visitor-map');
+  visitorSection.querySelector('.visitor-heading')?.remove();
+  visitorSection.querySelector('.visitor-stats-link')?.remove();
+  visitorSection.querySelector('.visitor-privacy-note')?.remove();
+  const profileSocial=profilePanel.querySelector('.profile-social');
+  profilePanel.insertBefore(visitorSection,profileSocial||null);
+}
+
 updateSideBackground();
