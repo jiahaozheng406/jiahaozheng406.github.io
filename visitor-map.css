@@ -1,11 +1,23 @@
-/* DeepThink / MapMyVisitors-style historical map under the profile photo */
+/* Live visitor map below the seven profile icons */
+.profile {
+  order: 0;
+}
+
+.profile-social {
+  order: 1;
+}
+
 .visitor-section,
 .profile-visitor-map {
+  order: 2;
   width: 200px;
-  margin: 12px auto 0;
+  margin: 18px auto 0;
   padding: 0;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -17,21 +29,37 @@
 .visitor-heading,
 .visitor-kicker,
 .visitor-description,
-.visitor-stats-link,
 .visitor-privacy-note {
   display: none !important;
 }
 
+/* Official whos.amung.us current-online widget, enlarged to about 2x. */
+.visitor-stats-link {
+  order: -1;
+  display: block !important;
+  width: 162px;
+  height: 58px;
+  margin: 0 auto 8px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  background: transparent url("https://whos.amung.us/widget/jhz406map1.png") center / 162px 58px no-repeat;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .visitor-map-card {
+  order: 0;
   position: relative;
   width: 200px;
-  aspect-ratio: 1000 / 559;
+  height: 100px;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
   background-color: #4aa6df;
   background-image:
-    url("./visitor-map.svg?v=20260717-deepthink-profile"),
+    url("./visitor-map.svg?v=20260717-live-profile"),
     url("https://upload.wikimedia.org/wikipedia/commons/e/e4/World_Map_Blank_-_with_blue_sea.svg");
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
@@ -41,17 +69,20 @@
   box-shadow: none;
 }
 
-/* Keep the real visitor service collecting in the background without replacing
-   the restored 442-view historical snapshot shown above. */
+/* The official live map renders at 260x130 and is scaled to 200x100. */
 .visitor-map-widget {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 1px;
+  position: relative;
+  display: block;
+  width: 260px;
+  height: 130px;
+  min-height: 130px;
+  margin: 0;
   overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(.76923077);
+  transform-origin: left top;
+  background: transparent;
 }
 
 .visitor-map-widget iframe,
@@ -60,13 +91,34 @@
 .visitor-map-widget object,
 .visitor-map-widget embed {
   display: block;
+  width: 260px !important;
+  max-width: none !important;
+  height: 130px !important;
+  margin: 0 !important;
+  padding: 0 !important;
   border: 0 !important;
+  box-shadow: none !important;
 }
 
 @media (max-width: 820px) {
   .visitor-section,
-  .profile-visitor-map,
+  .profile-visitor-map {
+    width: 190px;
+    margin-top: 16px;
+  }
+
+  .visitor-stats-link {
+    width: 146px;
+    height: 52px;
+    background-size: 146px 52px;
+  }
+
   .visitor-map-card {
     width: 190px;
+    height: 95px;
+  }
+
+  .visitor-map-widget {
+    transform: scale(.73076923);
   }
 }
