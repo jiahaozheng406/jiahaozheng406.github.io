@@ -1,74 +1,85 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="title desc">
-  <title id="title">Historical visitor map</title>
-  <desc id="desc">A light solid-color world map showing historical visits from Nanjing, Beijing, Shanghai, Hangzhou, Hong Kong, Macau, Singapore, and the United States.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 559" role="img" aria-label="Visitor locations">
   <defs>
-    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#1d4ed8" flood-opacity="0.24"/>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="1.2" stdDeviation="1.8" flood-color="#174ea6" flood-opacity="0.28"/>
     </filter>
     <style>
-      .land{fill:#cbd8e6;stroke:#f8fbff;stroke-width:2.4;stroke-linejoin:round}
-      .line{fill:none;stroke:#5f7692;stroke-width:1.2;stroke-linecap:round;opacity:.82}
-      .dot{fill:#2563eb;stroke:#fff;stroke-width:2;filter:url(#shadow)}
-      .ring{fill:#2563eb;opacity:.16}
-      .label{font:600 10px Arial,sans-serif;fill:#26364a}
-      .count{font:700 10px Arial,sans-serif;fill:#1d4ed8}
-      .meta{font:700 12px Arial,sans-serif;fill:#1e3a5f}
-      .sub{font:500 9px Arial,sans-serif;fill:#64748b}
+      .halo{fill:#1d4ed8;opacity:.16}
+      .dot{fill:#2563eb;stroke:#ffffff;stroke-width:2.2;filter:url(#glow)}
+      .dot2{fill:#60a5fa;stroke:#ffffff;stroke-width:2;filter:url(#glow)}
+      .dot3{fill:#64748b;stroke:#ffffff;stroke-width:1.8;filter:url(#glow)}
     </style>
   </defs>
 
-  <rect width="720" height="360" rx="18" fill="#eef3f8"/>
-  <path d="M0 58H720M0 116H720M0 174H720M0 232H720M0 290H720M120 0V360M240 0V360M360 0V360M480 0V360M600 0V360" stroke="#dfe8f1" stroke-width="1" opacity=".72"/>
-
-  <g class="land">
-    <path d="M46 84C69 53 114 42 153 51c28 6 52 21 73 42 18 18 18 36 2 51-18 17-42 12-61 20-20 9-28 32-49 40-24 8-52-4-61-28-7-19 2-39-8-56-9-14-15-24-3-36Z"/>
-    <path d="M170 196c17-14 39-12 54 4 16 18 13 43 2 64-11 22-26 48-43 47-20-2-31-31-27-56 3-23-5-44 14-59Z"/>
-    <path d="M297 73c31-26 80-31 118-14 24 11 43 29 66 35 34 9 70-2 103 11 30 11 54 38 57 68 4 36-25 54-55 61-29 7-46 29-75 38-31 10-67 8-94-10-25-16-32-45-56-60-21-13-50-10-66-31-20-25-19-76 2-98Z"/>
-    <path d="M539 260c19-13 49-13 67 1 18 14 22 39 10 57-14 20-45 25-65 11-21-15-31-53-12-69Z"/>
-    <path d="M646 207c8-6 17-7 24-2 7 6 7 16 1 23-7 7-19 7-25-1-5-7-5-15 0-20Z"/>
-  </g>
-
+  <!-- North America -->
   <g>
-    <text x="24" y="28" class="meta">Historical visits · 442 total</text>
-    <text x="24" y="43" class="sub">Baseline restored from previous traffic records</text>
+    <circle class="halo" cx="156" cy="190" r="13"/><circle class="dot" cx="156" cy="190" r="6.2"/>
+    <circle class="halo" cx="184" cy="204" r="12"/><circle class="dot2" cx="184" cy="204" r="5.8"/>
+    <circle class="halo" cx="214" cy="198" r="14"/><circle class="dot" cx="214" cy="198" r="6.8"/>
+    <circle class="halo" cx="241" cy="185" r="11"/><circle class="dot3" cx="241" cy="185" r="5.1"/>
+    <circle class="halo" cx="263" cy="204" r="10"/><circle class="dot2" cx="263" cy="204" r="4.8"/>
+    <circle class="halo" cx="285" cy="189" r="12"/><circle class="dot" cx="285" cy="189" r="5.8"/>
+    <circle class="halo" cx="297" cy="215" r="9"/><circle class="dot2" cx="297" cy="215" r="4.4"/>
+    <circle class="halo" cx="196" cy="222" r="9"/><circle class="dot3" cx="196" cy="222" r="4.2"/>
   </g>
 
-  <!-- United States -->
-  <circle cx="134" cy="111" r="11" class="ring"/><circle cx="134" cy="111" r="5.8" class="dot"/>
-  <path d="M134 111L91 78" class="line"/>
-  <text x="24" y="70" class="label">United States</text><text x="97" y="70" class="count">48</text>
+  <!-- South America -->
+  <g>
+    <circle class="halo" cx="311" cy="331" r="11"/><circle class="dot" cx="311" cy="331" r="5.3"/>
+    <circle class="halo" cx="326" cy="355" r="9"/><circle class="dot2" cx="326" cy="355" r="4.5"/>
+    <circle class="halo" cx="298" cy="381" r="8"/><circle class="dot3" cx="298" cy="381" r="4"/>
+  </g>
 
-  <!-- China and nearby locations -->
-  <circle cx="593" cy="100" r="11" class="ring"/><circle cx="593" cy="100" r="5.7" class="dot"/>
-  <path d="M593 100L640 63" class="line"/>
-  <text x="644" y="60" class="label">Beijing</text><text x="686" y="60" class="count">73</text>
+  <!-- Europe -->
+  <g>
+    <circle class="halo" cx="489" cy="164" r="11"/><circle class="dot" cx="489" cy="164" r="5.2"/>
+    <circle class="halo" cx="503" cy="172" r="10"/><circle class="dot2" cx="503" cy="172" r="4.9"/>
+    <circle class="halo" cx="518" cy="166" r="12"/><circle class="dot" cx="518" cy="166" r="5.8"/>
+    <circle class="halo" cx="531" cy="177" r="9"/><circle class="dot3" cx="531" cy="177" r="4.3"/>
+    <circle class="halo" cx="546" cy="170" r="10"/><circle class="dot2" cx="546" cy="170" r="4.8"/>
+    <circle class="halo" cx="559" cy="184" r="8"/><circle class="dot" cx="559" cy="184" r="4"/>
+    <circle class="halo" cx="474" cy="183" r="8"/><circle class="dot3" cx="474" cy="183" r="4"/>
+  </g>
 
-  <circle cx="598" cy="116" r="14" class="ring"/><circle cx="598" cy="116" r="7.2" class="dot"/>
-  <path d="M598 116L642 88" class="line"/>
-  <text x="646" y="86" class="label">Nanjing</text><text x="688" y="86" class="count">116</text>
+  <!-- Middle East and India -->
+  <g>
+    <circle class="halo" cx="608" cy="226" r="9"/><circle class="dot2" cx="608" cy="226" r="4.4"/>
+    <circle class="halo" cx="652" cy="258" r="12"/><circle class="dot" cx="652" cy="258" r="5.8"/>
+    <circle class="halo" cx="669" cy="273" r="9"/><circle class="dot3" cx="669" cy="273" r="4.4"/>
+  </g>
 
-  <circle cx="603" cy="117" r="10" class="ring"/><circle cx="603" cy="117" r="5.4" class="dot"/>
-  <path d="M603 117L646 113" class="line"/>
-  <text x="650" y="116" class="label">Shanghai</text><text x="699" y="116" class="count">68</text>
+  <!-- East China: Beijing, Nanjing, Shanghai, Hangzhou, Hong Kong, Macau -->
+  <g>
+    <circle class="halo" cx="769" cy="205" r="11"/><circle class="dot" cx="769" cy="205" r="5.4"/>
+    <circle class="halo" cx="780" cy="220" r="15"/><circle class="dot" cx="780" cy="220" r="7.2"/>
+    <circle class="halo" cx="792" cy="223" r="13"/><circle class="dot2" cx="792" cy="223" r="6.2"/>
+    <circle class="halo" cx="786" cy="232" r="12"/><circle class="dot" cx="786" cy="232" r="5.8"/>
+    <circle class="halo" cx="773" cy="239" r="10"/><circle class="dot3" cx="773" cy="239" r="4.8"/>
+    <circle class="halo" cx="778" cy="246" r="10"/><circle class="dot2" cx="778" cy="246" r="4.8"/>
+    <circle class="halo" cx="798" cy="211" r="8"/><circle class="dot3" cx="798" cy="211" r="4"/>
+    <circle class="halo" cx="804" cy="228" r="9"/><circle class="dot" cx="804" cy="228" r="4.4"/>
+    <circle class="halo" cx="790" cy="243" r="8"/><circle class="dot2" cx="790" cy="243" r="4"/>
+    <circle class="halo" cx="765" cy="228" r="8"/><circle class="dot3" cx="765" cy="228" r="3.9"/>
+    <circle class="halo" cx="783" cy="214" r="8"/><circle class="dot2" cx="783" cy="214" r="4"/>
+  </g>
 
-  <circle cx="600" cy="120" r="9" class="ring"/><circle cx="600" cy="120" r="4.9" class="dot"/>
-  <path d="M600 120L643 139" class="line"/>
-  <text x="647" y="143" class="label">Hangzhou</text><text x="697" y="143" class="count">52</text>
+  <!-- Japan and Korea -->
+  <g>
+    <circle class="halo" cx="832" cy="214" r="9"/><circle class="dot" cx="832" cy="214" r="4.4"/>
+    <circle class="halo" cx="815" cy="218" r="8"/><circle class="dot3" cx="815" cy="218" r="3.9"/>
+  </g>
 
-  <circle cx="589" cy="136" r="8.5" class="ring"/><circle cx="589" cy="136" r="4.6" class="dot"/>
-  <path d="M589 136L638 165" class="line"/>
-  <text x="642" y="169" class="label">Hong Kong</text><text x="699" y="169" class="count">34</text>
+  <!-- Southeast Asia and Singapore -->
+  <g>
+    <circle class="halo" cx="751" cy="292" r="10"/><circle class="dot2" cx="751" cy="292" r="4.8"/>
+    <circle class="halo" cx="744" cy="318" r="12"/><circle class="dot" cx="744" cy="318" r="5.8"/>
+    <circle class="halo" cx="759" cy="323" r="9"/><circle class="dot3" cx="759" cy="323" r="4.3"/>
+    <circle class="halo" cx="731" cy="327" r="8"/><circle class="dot2" cx="731" cy="327" r="4"/>
+  </g>
 
-  <circle cx="587" cy="137" r="6.5" class="ring"/><circle cx="587" cy="137" r="3.8" class="dot"/>
-  <path d="M587 137L628 190" class="line"/>
-  <text x="632" y="194" class="label">Macau</text><text x="670" y="194" class="count">12</text>
-
-  <!-- Singapore -->
-  <circle cx="568" cy="157" r="9" class="ring"/><circle cx="568" cy="157" r="4.9" class="dot"/>
-  <path d="M568 157L540 210" class="line"/>
-  <text x="487" y="224" class="label">Singapore</text><text x="541" y="224" class="count">39</text>
-
-  <g transform="translate(24 321)">
-    <circle cx="5" cy="-4" r="4" class="dot"/><text x="16" y="0" class="sub">Marker size reflects historical visit volume</text>
+  <!-- Australia -->
+  <g>
+    <circle class="halo" cx="866" cy="394" r="13"/><circle class="dot" cx="866" cy="394" r="6.2"/>
+    <circle class="halo" cx="839" cy="383" r="9"/><circle class="dot2" cx="839" cy="383" r="4.3"/>
   </g>
 </svg>
