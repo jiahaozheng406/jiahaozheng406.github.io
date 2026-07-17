@@ -3,73 +3,73 @@
   <desc id="desc">DeepThink-style historical visitor markers representing 442 pageviews.</desc>
   <defs>
     <filter id="shadow" x="-60%" y="-60%" width="220%" height="220%">
-      <feDropShadow dx="0" dy="1.5" stdDeviation="1.8" flood-color="#174a72" flood-opacity="0.34"/>
+      <feDropShadow dx="0" dy="1.6" stdDeviation="2" flood-color="#174a72" flood-opacity="0.36"/>
     </filter>
     <style>
-      .counter{fill:#fff;font:700 60px Arial,Helvetica,sans-serif;text-anchor:middle;paint-order:stroke;stroke:rgba(35,93,136,.28);stroke-width:3px}
-      .green{fill:#18af46;stroke:#fff;stroke-width:2.7;filter:url(#shadow)}
-      .orange{fill:#f59a17;stroke:#fff;stroke-width:2.7;filter:url(#shadow)}
-      .blue{fill:#278ed1;stroke:#fff;stroke-width:2.3;filter:url(#shadow)}
+      .counter{fill:#fff;font:700 104px Arial,Helvetica,sans-serif;text-anchor:middle;paint-order:stroke;stroke:rgba(35,93,136,.30);stroke-width:5px}
+      .green{fill:#18af46;stroke:#fff;stroke-width:3;filter:url(#shadow)}
+      .orange{fill:#f59a17;stroke:#fff;stroke-width:3;filter:url(#shadow)}
+      .blue{fill:#278ed1;stroke:#fff;stroke-width:2.5;filter:url(#shadow)}
       .halo-g{fill:#16a34a;opacity:.18}
       .halo-o{fill:#f59e0b;opacity:.20}
     </style>
   </defs>
 
-  <text class="counter" x="500" y="76">442 Pageviews</text>
+  <text class="counter" x="500" y="112">442 Pageviews</text>
 
   <g><title>United States — 48 visits</title>
-    <circle class="halo-g" cx="166" cy="194" r="19"/><circle class="green" cx="166" cy="194" r="8.8"/>
-    <circle class="halo-o" cx="214" cy="204" r="17"/><circle class="orange" cx="214" cy="204" r="7.8"/>
-    <circle class="halo-g" cx="246" cy="187" r="16"/><circle class="green" cx="246" cy="187" r="7.2"/>
-    <circle class="halo-o" cx="273" cy="222" r="14"/><circle class="orange" cx="273" cy="222" r="6.5"/>
-    <circle class="halo-g" cx="194" cy="223" r="12"/><circle class="green" cx="194" cy="223" r="5.5"/>
+    <circle class="halo-g" cx="166" cy="194" r="20"/><circle class="green" cx="166" cy="194" r="9.2"/>
+    <circle class="halo-o" cx="214" cy="204" r="18"/><circle class="orange" cx="214" cy="204" r="8.1"/>
+    <circle class="halo-g" cx="246" cy="187" r="17"/><circle class="green" cx="246" cy="187" r="7.5"/>
+    <circle class="halo-o" cx="273" cy="222" r="15"/><circle class="orange" cx="273" cy="222" r="6.8"/>
+    <circle class="halo-g" cx="194" cy="223" r="13"/><circle class="green" cx="194" cy="223" r="5.8"/>
   </g>
 
   <g aria-hidden="true">
-    <circle class="halo-g" cx="489" cy="171" r="14"/><circle class="green" cx="489" cy="171" r="6.4"/>
-    <circle class="halo-o" cx="526" cy="178" r="13"/><circle class="orange" cx="526" cy="178" r="6"/>
-    <circle class="halo-g" cx="558" cy="190" r="11"/><circle class="green" cx="558" cy="190" r="5"/>
+    <circle class="halo-g" cx="489" cy="171" r="15"/><circle class="green" cx="489" cy="171" r="6.7"/>
+    <circle class="halo-o" cx="526" cy="178" r="14"/><circle class="orange" cx="526" cy="178" r="6.3"/>
+    <circle class="halo-g" cx="558" cy="190" r="12"/><circle class="green" cx="558" cy="190" r="5.3"/>
   </g>
 
   <g><title>Beijing — 73 visits</title>
-    <circle class="halo-g" cx="771" cy="204" r="18"/><circle class="green" cx="771" cy="204" r="8.3"/>
+    <circle class="halo-g" cx="771" cy="204" r="19"/><circle class="green" cx="771" cy="204" r="8.6"/>
   </g>
 
   <g><title>Nanjing — 116 visits</title>
-    <circle class="halo-g" cx="780" cy="223" r="24"/><circle class="green" cx="780" cy="223" r="10.8"/>
+    <circle class="halo-g" cx="780" cy="223" r="25"/><circle class="green" cx="780" cy="223" r="11.2"/>
   </g>
 
   <g><title>Shanghai — 68 visits</title>
-    <circle class="halo-o" cx="795" cy="225" r="18"/><circle class="orange" cx="795" cy="225" r="8.2"/>
+    <circle class="halo-o" cx="795" cy="225" r="19"/><circle class="orange" cx="795" cy="225" r="8.5"/>
   </g>
 
   <g><title>Hangzhou — 52 visits</title>
-    <circle class="halo-o" cx="789" cy="236" r="16"/><circle class="orange" cx="789" cy="236" r="7.2"/>
+    <circle class="halo-o" cx="789" cy="236" r="17"/><circle class="orange" cx="789" cy="236" r="7.5"/>
   </g>
 
   <g><title>Hong Kong — 34 visits</title>
-    <circle class="halo-g" cx="781" cy="254" r="14"/><circle class="green" cx="781" cy="254" r="6.3"/>
+    <circle class="halo-g" cx="781" cy="254" r="15"/><circle class="green" cx="781" cy="254" r="6.6"/>
   </g>
 
   <g><title>Macau — 12 visits</title>
-    <circle class="halo-o" cx="775" cy="257" r="10"/><circle class="orange" cx="775" cy="257" r="4.7"/>
+    <circle class="halo-o" cx="775" cy="257" r="11"/><circle class="orange" cx="775" cy="257" r="5"/>
   </g>
 
   <g><title>Singapore — 39 visits</title>
-    <circle class="halo-g" cx="744" cy="322" r="16"/><circle class="green" cx="744" cy="322" r="7.3"/>
+    <circle class="halo-g" cx="744" cy="322" r="17"/><circle class="green" cx="744" cy="322" r="7.6"/>
   </g>
 
   <g aria-hidden="true">
-    <circle class="blue" cx="807" cy="216" r="4.8"/>
-    <circle class="green" cx="799" cy="241" r="4.9"/>
-    <circle class="orange" cx="765" cy="233" r="4.7"/>
-    <circle class="green" cx="758" cy="291" r="5.1"/>
-    <circle class="orange" cx="831" cy="216" r="5.1"/>
-    <circle class="green" cx="864" cy="394" r="6.9"/>
-    <circle class="orange" cx="313" cy="332" r="5.6"/>
-    <circle class="green" cx="652" cy="258" r="5.9"/>
-    <circle class="orange" cx="730" cy="280" r="4.8"/>
-    <circle class="green" cx="821" cy="249" r="4.7"/>
-    <circle class="orange" cx="751" cy="310" r="4.8"/>
+    <circle class="blue" cx="807" cy="216" r="5"/>
+    <circle class="green" cx="799" cy="241" r="5.1"/>
+    <circle class="orange" cx="765" cy="233" r="4.9"/>
+    <circle class="green" cx="758" cy="291" r="5.3"/>
+    <circle class="orange" cx="831" cy="216" r="5.3"/>
+    <circle class="green" cx="864" cy="394" r="7.1"/>
+    <circle class="orange" cx="313" cy="332" r="5.8"/>
+    <circle class="green" cx="652" cy="258" r="6.1"/>
+    <circle class="orange" cx="730" cy="280" r="5"/>
+    <circle class="green" cx="821" cy="249" r="4.9"/>
+    <circle class="orange" cx="751" cy="310" r="5"/>
   </g>
 </svg>
