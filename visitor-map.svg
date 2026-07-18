@@ -6,7 +6,6 @@
       <feDropShadow dx="0" dy="1.6" stdDeviation="2" flood-color="#174a72" flood-opacity="0.36"/>
     </filter>
     <style>
-      .counter{fill:#fff;font:700 104px Arial,Helvetica,sans-serif;text-anchor:middle;paint-order:stroke;stroke:rgba(35,93,136,.30);stroke-width:5px}
       .green{fill:#18af46;stroke:#fff;stroke-width:3;filter:url(#shadow)}
       .orange{fill:#f59a17;stroke:#fff;stroke-width:3;filter:url(#shadow)}
       .blue{fill:#278ed1;stroke:#fff;stroke-width:2.5;filter:url(#shadow)}
@@ -14,8 +13,6 @@
       .halo-o{fill:#f59e0b;opacity:.20}
     </style>
   </defs>
-
-  <text class="counter" x="500" y="112">442 Pageviews</text>
 
   <g><title>United States — 48 visits</title>
     <circle class="halo-g" cx="166" cy="194" r="20"/><circle class="green" cx="166" cy="194" r="9.2"/>
