@@ -186,8 +186,75 @@ if(visitorSection&&profilePanel){
   visitorSection.querySelector('.visitor-heading')?.remove();
   visitorSection.querySelector('.visitor-stats-link')?.remove();
   visitorSection.querySelector('.visitor-privacy-note')?.remove();
+
   const profileSocial=profilePanel.querySelector('.profile-social');
-  profilePanel.insertBefore(visitorSection,profileSocial||null);
+  if(profileSocial)profileSocial.insertAdjacentElement('afterend',visitorSection);
+  else profilePanel.appendChild(visitorSection);
+
+  const visitorCount=document.createElement('div');
+  visitorCount.className='visitor-count is-loading';
+  visitorCount.setAttribute('aria-live','polite');
+  visitorCount.textContent='Loading pageviews…';
+  visitorSection.appendChild(visitorCount);
+
+  const BASELINE_PAGEVIEWS=442;
+  const COUNTER_URL='https://api.counterapi.dev/v1/jiahaozheng406-github-io/homepage-visits-20260718';
+  const VISIT_WINDOW_MS=30*60*1000;
+  const LAST_VISIT_KEY='jhz-homepage-last-counted-visit';
+
+  const extractCounterValue=payload=>{
+    const candidates=[
+      payload?.count,
+      payload?.value,
+      payload?.data?.count,
+      payload?.data?.value,
+      payload?.data
+    ];
+    for(const candidate of candidates){
+      const value=Number(candidate);
+      if(Number.isFinite(value))return Math.max(0,Math.trunc(value));
+    }
+    return 0;
+  };
+
+  (async()=>{
+    const now=Date.now();
+    let lastVisit=0;
+    let shouldIncrement=true;
+    let reservedVisit=false;
+
+    try{
+      lastVisit=Number(localStorage.getItem(LAST_VISIT_KEY)||0);
+      shouldIncrement=!lastVisit||now-lastVisit>=VISIT_WINDOW_MS;
+      if(shouldIncrement){
+        localStorage.setItem(LAST_VISIT_KEY,String(now));
+        reservedVisit=true;
+      }
+    }catch{
+      shouldIncrement=true;
+    }
+
+    try{
+      const endpoint=shouldIncrement?`${COUNTER_URL}/up`:COUNTER_URL;
+      const response=await fetch(endpoint,{cache:'no-store',mode:'cors'});
+      if(!response.ok)throw new Error(`Counter request failed: ${response.status}`);
+      const payload=await response.json();
+      const total=BASELINE_PAGEVIEWS+extractCounterValue(payload);
+      visitorCount.textContent=`${total.toLocaleString('en-US')} Pageviews`;
+      visitorCount.classList.remove('is-loading');
+      visitorCount.title='442 restored historical pageviews plus shared visits counted after July 18, 2026. Repeat refreshes from the same browser within 30 minutes are not counted again.';
+    }catch(error){
+      if(reservedVisit){
+        try{
+          if(localStorage.getItem(LAST_VISIT_KEY)===String(now))localStorage.removeItem(LAST_VISIT_KEY);
+        }catch{}
+      }
+      visitorCount.textContent='442+ Pageviews';
+      visitorCount.classList.remove('is-loading');
+      visitorCount.title='The shared counter is temporarily unavailable; 442 is the restored historical baseline.';
+      console.warn('Visitor counter unavailable:',error);
+    }
+  })();
 }
 
 updateSideBackground();
