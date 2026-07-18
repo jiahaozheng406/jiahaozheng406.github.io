@@ -45,6 +45,20 @@
   background: none !important;
 }
 
+/* Show the historical total below the map instead of over the map. */
+.visitor-section::after,
+.profile-visitor-map::after {
+  content: "442 Pageviews";
+  display: block;
+  margin: 8px auto 0;
+  color: #334155;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .01em;
+  text-align: center;
+}
+
 /* Keep only the clean DeepThink-style map image. */
 .visitor-map-card {
   position: relative;
@@ -55,7 +69,7 @@
   overflow: hidden;
   background-color: #4ca8df;
   background-image:
-    url("./visitor-map.svg?v=20260718-clean"),
+    url("./visitor-map.svg?v=20260718-count-below"),
     url("https://upload.wikimedia.org/wikipedia/commons/e/e4/World_Map_Blank_-_with_blue_sea.svg");
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
@@ -99,5 +113,11 @@
   .visitor-section,
   .profile-visitor-map {
     margin-top: 14px;
+  }
+
+  .visitor-section::after,
+  .profile-visitor-map::after {
+    margin-top: 7px;
+    font-size: 18px;
   }
 }
