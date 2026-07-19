@@ -4,8 +4,8 @@ const root=document.documentElement;
 
 /* Install the portrait favicon from versioned local assets. The JPEG link is a
    fallback for browsers that do not support SVG favicons; the SVG link is added
-   afterwards so modern browsers prefer the circular cropped version. */
-const SITE_ICON_VERSION='20260719-portrait-v1';
+   afterwards so modern browsers prefer the tightly cropped oval portrait. */
+const SITE_ICON_VERSION='20260719-portrait-v3';
 function ensureHeadLink(key,attributes){
   let link=document.head.querySelector(`link[data-site-icon="${key}"]`);
   if(!link){
