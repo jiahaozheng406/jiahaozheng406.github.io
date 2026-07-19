@@ -2,6 +2,52 @@ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer=matchMedia('(pointer: fine)').matches;
 const root=document.documentElement;
 
+/* Install the portrait favicon from versioned local assets. The JPEG link is a
+   fallback for browsers that do not support SVG favicons; the SVG link is added
+   afterwards so modern browsers prefer the circular cropped version. */
+const SITE_ICON_VERSION='20260719-portrait-v1';
+function ensureHeadLink(key,attributes){
+  let link=document.head.querySelector(`link[data-site-icon="${key}"]`);
+  if(!link){
+    link=document.createElement('link');
+    link.dataset.siteIcon=key;
+    document.head.appendChild(link);
+  }
+  Object.entries(attributes).forEach(([name,value])=>link.setAttribute(name,value));
+  return link;
+}
+function installSiteIcons(){
+  if(!document.head)return;
+  ensureHeadLink('jpeg-fallback',{
+    rel:'icon',
+    type:'image/jpeg',
+    sizes:'32x32',
+    href:`./profile.jpg?v=${SITE_ICON_VERSION}`
+  });
+  ensureHeadLink('svg-primary',{
+    rel:'icon',
+    type:'image/svg+xml',
+    sizes:'any',
+    href:`./favicon.svg?v=${SITE_ICON_VERSION}`
+  });
+  ensureHeadLink('shortcut',{
+    rel:'shortcut icon',
+    type:'image/svg+xml',
+    href:`./favicon.svg?v=${SITE_ICON_VERSION}`
+  });
+  ensureHeadLink('apple-touch',{
+    rel:'apple-touch-icon',
+    sizes:'180x180',
+    href:`./profile.jpg?v=${SITE_ICON_VERSION}`
+  });
+  ensureHeadLink('manifest',{
+    rel:'manifest',
+    href:`./site.webmanifest?v=${SITE_ICON_VERSION}`
+  });
+}
+installSiteIcons();
+addEventListener('pageshow',installSiteIcons,{passive:true});
+
 function loadImage(image,sources,{loading='lazy',fetchPriority,alt}={}){
   if(!image||!sources.length)return;
   let i=0;
