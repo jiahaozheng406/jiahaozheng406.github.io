@@ -2,10 +2,9 @@ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer=matchMedia('(pointer: fine)').matches;
 const root=document.documentElement;
 
-/* Install the portrait favicon from versioned local assets. The JPEG link is a
-   fallback for browsers that do not support SVG favicons; the SVG link is added
-   afterwards so modern browsers prefer the tightly cropped oval portrait. */
-const SITE_ICON_VERSION='20260719-portrait-v3';
+/* Install the direct uploaded site icon from a versioned local SVG wrapper.
+   The source PNG is embedded unchanged: no oval mask, border, or portrait crop. */
+const SITE_ICON_VERSION='20260719-direct-icon-v1';
 function ensureHeadLink(key,attributes){
   let link=document.head.querySelector(`link[data-site-icon="${key}"]`);
   if(!link){
@@ -18,11 +17,11 @@ function ensureHeadLink(key,attributes){
 }
 function installSiteIcons(){
   if(!document.head)return;
-  ensureHeadLink('jpeg-fallback',{
+  ensureHeadLink('direct-fallback',{
     rel:'icon',
-    type:'image/jpeg',
-    sizes:'32x32',
-    href:`./profile.jpg?v=${SITE_ICON_VERSION}`
+    type:'image/svg+xml',
+    sizes:'any',
+    href:`./favicon.svg?v=${SITE_ICON_VERSION}`
   });
   ensureHeadLink('svg-primary',{
     rel:'icon',
@@ -38,7 +37,7 @@ function installSiteIcons(){
   ensureHeadLink('apple-touch',{
     rel:'apple-touch-icon',
     sizes:'180x180',
-    href:`./profile.jpg?v=${SITE_ICON_VERSION}`
+    href:`./favicon.svg?v=${SITE_ICON_VERSION}`
   });
   ensureHeadLink('manifest',{
     rel:'manifest',
