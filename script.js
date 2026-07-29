@@ -78,6 +78,19 @@ document.querySelectorAll('.interest-body p').forEach(p=>{
   }
 });
 
+const cvLink=document.querySelector('.profile-social a[aria-label="Curriculum Vitae"]');
+if(cvLink){
+  cvLink.href='#cv-contact';
+  cvLink.removeAttribute('target');
+  cvLink.removeAttribute('rel');
+  cvLink.title='CV details: contact jiahaozheng2005@163.com';
+  cvLink.setAttribute('aria-label','Curriculum Vitae contact information');
+  cvLink.addEventListener('click',event=>{
+    event.preventDefault();
+    window.alert('具体详情请联系 jiahaozheng2005@163.com');
+  });
+}
+
 const news=document.querySelector('.news-list');
 if(news){
   [...news.children].map((item,index)=>{
