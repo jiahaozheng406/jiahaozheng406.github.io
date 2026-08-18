@@ -257,9 +257,7 @@ if(visitorSection&&profilePanel){
 
   const BASELINE_PAGEVIEWS=442;
   const COUNTER_URL='https://api.counterapi.dev/v1/jiahaozheng406-github-io/homepage-visits-20260718';
-  const PAGEVIEW_CACHE_KEY='jhz-pageviews-total-v2';
-  const PAGEVIEW_VISIT_KEY='jhz-pageviews-last-hit-v2';
-  const VISIT_WINDOW_MS=30*60*1000;
+  const PAGEVIEW_CACHE_KEY='jhz-pageviews-total-v3';
 
   const extractCounterValue=payload=>{
     const candidates=[
@@ -297,34 +295,26 @@ if(visitorSection&&profilePanel){
   };
 
   const cachedTotal=readStoredNumber(PAGEVIEW_CACHE_KEY);
-  const lastCountedAt=readStoredNumber(PAGEVIEW_VISIT_KEY);
-  const now=Date.now();
-  const shouldCount=!lastCountedAt||now-lastCountedAt>=VISIT_WINDOW_MS;
 
-  if(!shouldCount&&cachedTotal!==null){
-    renderPageviews(cachedTotal,'Cached pageview total; this browser is counted at most once every 30 minutes.');
-  }else{
-    (async()=>{
-      try{
-        const response=await fetch(`${COUNTER_URL}/up`,{cache:'no-store',mode:'cors'});
-        if(!response.ok)throw new Error(`Counter request failed: ${response.status}`);
-        const payload=await response.json();
-        const total=BASELINE_PAGEVIEWS+extractCounterValue(payload);
-        writeStoredNumber(PAGEVIEW_CACHE_KEY,total);
-        writeStoredNumber(PAGEVIEW_VISIT_KEY,now);
-        renderPageviews(total,'442 restored historical pageviews plus the shared counter; this browser is counted at most once every 30 minutes.');
-      }catch(error){
-        if(cachedTotal!==null){
-          renderPageviews(cachedTotal,'Showing the most recent successfully cached pageview total because the shared counter is temporarily unavailable.');
-        }else{
-          visitorCount.textContent='Pageviews unavailable';
-          visitorCount.classList.remove('is-loading');
-          visitorCount.title='The shared pageview counter is temporarily unavailable.';
-        }
-        console.warn('Visitor counter unavailable:',error);
+  (async()=>{
+    try{
+      const response=await fetch(`${COUNTER_URL}/up`,{cache:'no-store',mode:'cors'});
+      if(!response.ok)throw new Error(`Counter request failed: ${response.status}`);
+      const payload=await response.json();
+      const total=BASELINE_PAGEVIEWS+extractCounterValue(payload);
+      writeStoredNumber(PAGEVIEW_CACHE_KEY,total);
+      renderPageviews(total,'Every page load or refresh counts as one pageview.');
+    }catch(error){
+      if(cachedTotal!==null){
+        renderPageviews(cachedTotal,'Showing the most recent successfully cached pageview total because the shared counter is temporarily unavailable.');
+      }else{
+        visitorCount.textContent='Pageviews unavailable';
+        visitorCount.classList.remove('is-loading');
+        visitorCount.title='The shared pageview counter is temporarily unavailable.';
       }
-    })();
-  }
+      console.warn('Visitor counter unavailable:',error);
+    }
+  })();
 }
 
 updateSideBackground();
