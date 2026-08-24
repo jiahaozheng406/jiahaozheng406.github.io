@@ -87,7 +87,7 @@ if(cvLink){
   cvLink.setAttribute('aria-label','Curriculum Vitae contact information');
   cvLink.addEventListener('click',event=>{
     event.preventDefault();
-    window.alert('具体详情请联系 jiahaozheng2005@163.com');
+    window.alert('For detailed CV, please contact:\njiahaozheng2005@163.com');
   });
 }
 
