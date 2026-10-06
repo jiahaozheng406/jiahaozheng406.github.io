@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiahao Zheng, an undergraduate at NJUPT working on 3D vision, multimodal learning and embodied intelligence.">
+  <title>Jiahao Zheng | Academic Homepage</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="#top">Jiahao Zheng <span lang="zh-CN">郑家浩</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#research">Research</a>
+        <a href="#beyond">Beyond research</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page" id="top">
+    <aside class="profile" aria-label="Profile and contact">
+      <img class="portrait" src="../profile.jpg" width="200" height="250" alt="Portrait of Jiahao Zheng" fetchpriority="high">
+      <h1>Jiahao Zheng</h1>
+      <p class="chinese-name" lang="zh-CN">郑家浩</p>
+      <p class="role">Undergraduate student</p>
+      <p class="affiliation">Nanjing University of Posts <br>and Telecommunications</p>
+      <p class="location">Nanjing, China</p>
+      <div class="contact">
+        <a href="mailto:jiahaozheng2005@163.com">Email</a>
+        <a href="https://github.com/jiahaozheng406">GitHub</a>
+        <a href="https://orcid.org/0009-0006-1588-8788">ORCID</a>
+        <a href="mailto:jiahaozheng2005@163.com?subject=CV%20request">CV upon request</a>
+      </div>
+      <p class="profile-note">3D vision &amp; embodied intelligence</p>
+    </aside>
+    <div class="content">
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About me</h2>
+        <p>I am an undergraduate in Internet of Things Engineering at <a href="https://www.njupt.edu.cn/">Nanjing University of Posts and Telecommunications (NJUPT)</a>, where I rank first in my major. My work explores how learning-based systems can reconstruct, understand and interact with the 3D world.</p>
+        <p>I have been <strong>pre-admitted to the master's program in Artificial Intelligence</strong> at the State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences, through recommendation with entrance-examination exemption. I expect to begin in <strong>September 2027</strong>.</p>
+        <p>During my undergraduate studies, I have worked on sparse-view 3D Gaussian Splatting, executable CAD generation, and Real2Sim environments for robot navigation. Earlier work in physics-aware sensing shaped my interest in combining learned representations with structural and physical constraints.</p>
+        <h3 class="subheading">Research interests</h3>
+        <ul class="interests">
+          <li>3D vision &amp; spatial intelligence</li>
+          <li>Multimodal large language models</li>
+          <li>World models</li>
+          <li>Embodied AI</li>
+        </ul>
+      </section>
+      <section id="news" aria-labelledby="news-title">
+        <h2 id="news-title">News</h2>
+        <dl class="news">
+          <div><dt>2026.10</dt><dd>My next chapter: pre-admitted to the AI master's program at <strong>CASIA</strong>, with expected enrollment in September 2027.</dd></div>
+          <div><dt>2026.09</dt><dd>Received the <strong>Jiangsu New Era Outstanding Youth</strong> honor, awarded to 10 honorees across the province.</dd></div>
+          <div><dt>2026.09</dt><dd>Submitted <strong>TopoGen</strong> and <strong>KV Thickets</strong> to ICLR 2027.</dd></div>
+          <div><dt>2026.07</dt><dd>Our work on physics-aware diamond thermometry appeared in <em>Applied Physics Letters</em>.</dd></div>
+          <div><dt>2026.05</dt><dd>Our team received Third Prize at the China Robot Competition &amp; RoboCup China Open.</dd></div>
+          <div><dt>2026.03</dt><dd>Our sparse-view 3D Gaussian Splatting paper was accepted to <strong>ICMR 2026</strong>.</dd></div>
+        </dl>
+      </section>
+      <section id="research" aria-labelledby="research-title">
+        <h2 id="research-title">Selected research</h2>
+        <article class="work">
+          <h3>TopoGen: Topology-Guided Multimodal Generation for Executable CadQuery Synthesis</h3>
+          <p class="meta">ICLR 2027 submission · Second author</p>
+          <p>Topology-guided CAD programs from point clouds and multi-view images. Constraint graphs, BRep supervision and ToRPO connect visual geometry to executable modeling operations.</p>
+        </article>
+        <article class="work">
+          <h3>KV Thickets: Task Experts from Random Prefix-Cache Perturbations</h3>
+          <p class="meta">ICLR 2027 submission · Co-author</p>
+          <p>Reusable task adaptation through random prefix-KV perturbations, keeping model weights and prefix text fixed. Batched candidate evaluation uses shared weights in vLLM.</p>
+        </article>
+        <article class="work">
+          <h3><a href="https://doi.org/10.1145/3805622.3810640">Towards Robust Sparse-View 3D Gaussian Splatting via Hierarchical Depth and Multi-View Consistency</a></h3>
+          <p class="meta">ACM ICMR 2026 · Second author</p>
+          <p>Monocular-depth alignment, semantic depth supervision and multi-view consistency improve reconstruction from sparse observations.</p>
+          <p class="work-links"><a href="https://doi.org/10.1145/3805622.3810640">Paper</a><a href="https://github.com/jiahaozheng406/3DGS-Research">Code</a></p>
+        </article>
+        <article class="work">
+          <h3>Real2Sim for embodied navigation</h3>
+          <p class="meta">Research at ICT-CAS IIP-VIPL · 2025–2026</p>
+          <p>Dynamic filtering, VGGT initialization and globally aligned 3DGS turn long road videos into editable Isaac Sim environments for teacher–student navigation transfer.</p>
+        </article>
+        <article class="work">
+          <h3><a href="https://doi.org/10.1063/5.0339528">Diamond Thermometry Beyond the Zero-Phonon Line via Physics-Aware Spectral Trend Learning</a></h3>
+          <p class="meta">Applied Physics Letters, 2026 · First author</p>
+          <p>Physics-aware spectral learning for robust NV-center thermometry when conventional zero-phonon-line features become unreliable.</p>
+        </article>
+        <article class="work">
+          <h3><a href="https://doi.org/10.1088/1674-1056/ae5f88">Real-Time On-Chip Nanosecond Pulse Capture with NV Centers: U-Net Denoising and Signal Reconstruction</a></h3>
+          <p class="meta">Chinese Physics B, 2026 · Third author</p>
+          <p>Physics-aware U-Net denoising and signal inversion recover weak transient signals in NV-center sensing.</p>
+        </article>
+      </section>
+      <section id="beyond" aria-labelledby="beyond-title">
+        <h2 id="beyond-title">Beyond research</h2>
+        <p>I co-founded <strong>Nanjing Qingning Sensing Technology</strong>, working on AI algorithms for wearable sensing and gait modeling. As co-founder and vice president of NJUPT's Innovation and Entrepreneurship Association, I helped organize talks and activities connecting students, alumni and industry.</p>
+        <p>Outside the lab, I enjoy football, marathon running and climbing. I have represented NJUPT in Nanjing intercollegiate athletics and the Jiangsu Provincial Games.</p>
+      </section>
+      <footer>
+        <span>© 2026 Jiahao Zheng · Updated October 2026</span>
+        <a href="../">Previous homepage</a>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
