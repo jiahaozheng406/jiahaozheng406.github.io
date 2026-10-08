@@ -18,7 +18,7 @@
         <a href="#about">About</a>
         <a href="#news">News</a>
         <a href="#research">Research</a>
-        <a href="#beyond">Beyond research</a>
+        <a href="#beyond">Projects</a>
       </nav>
     </div>
   </header>
@@ -29,7 +29,6 @@
       <p class="chinese-name" lang="zh-CN">郑家浩</p>
       <p class="role">Undergraduate student</p>
       <p class="affiliation">Nanjing University of Posts <br>and Telecommunications</p>
-      <p class="location">Nanjing, China</p>
       <div class="contact">
         <a href="mailto:jiahaozheng2005@163.com">Email</a>
         <a href="https://github.com/jiahaozheng406">GitHub</a>
@@ -41,7 +40,7 @@
     <div class="content">
       <section id="about" aria-labelledby="about-title">
         <h2 id="about-title">About me</h2>
-        <p>I am an undergraduate in Internet of Things Engineering at <a href="https://www.njupt.edu.cn/">Nanjing University of Posts and Telecommunications (NJUPT)</a>, where I rank first in my major. My work explores how learning-based systems can reconstruct, understand and interact with the 3D world.</p>
+        <p>I am an undergraduate in Internet of Things Engineering at <a href="https://www.njupt.edu.cn/">Nanjing University of Posts and Telecommunications (NJUPT)</a>. My work explores how learning-based systems can reconstruct, understand and interact with the 3D world.</p>
         <p>I have been <strong>pre-admitted to the master's program in Artificial Intelligence</strong> at the State Key Laboratory of Multimodal Artificial Intelligence Systems, Institute of Automation, Chinese Academy of Sciences, through recommendation with entrance-examination exemption. I expect to begin in <strong>September 2027</strong>.</p>
         <p>During my undergraduate studies, I have worked on sparse-view 3D Gaussian Splatting, executable CAD generation, and Real2Sim environments for robot navigation. Earlier work in physics-aware sensing shaped my interest in combining learned representations with structural and physical constraints.</p>
         <h3 class="subheading">Research interests</h3>
@@ -68,39 +67,54 @@
         <article class="work">
           <h3>TopoGen: Topology-Guided Multimodal Generation for Executable CadQuery Synthesis</h3>
           <p class="meta">ICLR 2027 submission · Second author</p>
-          <p>Topology-guided CAD programs from point clouds and multi-view images. Constraint graphs, BRep supervision and ToRPO connect visual geometry to executable modeling operations.</p>
+          <p>Topology-guided CAD programs from point clouds and multi-view images. Constraint graphs and BRep-derived supervision connect visual observations to executable modeling operations. Topology Relative Policy Optimization (ToRPO) uses essential-operation matching for structural feedback, while TopoCAD-1M augments training data with topology constraints.</p>
         </article>
         <article class="work">
           <h3>KV Thickets: Task Experts from Random Prefix-Cache Perturbations</h3>
           <p class="meta">ICLR 2027 submission · Co-author</p>
-          <p>Reusable task adaptation through random prefix-KV perturbations, keeping model weights and prefix text fixed. Batched candidate evaluation uses shared weights in vLLM.</p>
+          <p>Reusable task adaptation through random prefix-KV perturbations, keeping model weights and prefix text fixed. Candidates are selected on labeled examples and reused across inputs, with batched evaluation under shared weights in vLLM. The study spans seven models and seven benchmarks; its evaluation is descriptive because benchmark pools had been examined previously.</p>
         </article>
         <article class="work">
           <h3><a href="https://doi.org/10.1145/3805622.3810640">Towards Robust Sparse-View 3D Gaussian Splatting via Hierarchical Depth and Multi-View Consistency</a></h3>
           <p class="meta">ACM ICMR 2026 · Second author</p>
-          <p>Monocular-depth alignment, semantic depth supervision and multi-view consistency improve reconstruction from sparse observations.</p>
+          <p>Monocular-depth alignment with sparse SfM geometry, semantic depth supervision and multi-view consistency improve reconstruction from sparse observations. My work covered depth alignment, hierarchical supervision and evaluation, addressing geometric drift and overfitting when only a few views are available.</p>
           <p class="work-links"><a href="https://doi.org/10.1145/3805622.3810640">Paper</a><a href="https://github.com/jiahaozheng406/3DGS-Research">Code</a></p>
         </article>
         <article class="work">
           <h3>Real2Sim for embodied navigation</h3>
           <p class="meta">Research at ICT-CAS IIP-VIPL · 2025–2026</p>
-          <p>Dynamic filtering, VGGT initialization and globally aligned 3DGS turn long road videos into editable Isaac Sim environments for teacher–student navigation transfer.</p>
+          <p>Dynamic filtering, VGGT initialization and globally aligned 3DGS turn long road videos into editable scenes. Mesh conversion and asset editing connect reconstruction to Isaac Sim, supporting teacher–student navigation transfer and quadruped deployment. The focus is spatial consistency and a usable bridge between real observations and robot simulation.</p>
         </article>
         <article class="work">
           <h3><a href="https://doi.org/10.1063/5.0339528">Diamond Thermometry Beyond the Zero-Phonon Line via Physics-Aware Spectral Trend Learning</a></h3>
           <p class="meta">Applied Physics Letters, 2026 · First author</p>
-          <p>Physics-aware spectral learning for robust NV-center thermometry when conventional zero-phonon-line features become unreliable.</p>
+          <p>Physics-aware spectral learning for robust NV-center thermometry when conventional zero-phonon-line features become unreliable. I designed a physics-constrained ResNet to learn phonon-sideband evolution and evaluated cross-sample adaptation, connecting spectral structure with temperature inference.</p>
         </article>
         <article class="work">
           <h3><a href="https://doi.org/10.1088/1674-1056/ae5f88">Real-Time On-Chip Nanosecond Pulse Capture with NV Centers: U-Net Denoising and Signal Reconstruction</a></h3>
           <p class="meta">Chinese Physics B, 2026 · Third author</p>
-          <p>Physics-aware U-Net denoising and signal inversion recover weak transient signals in NV-center sensing.</p>
+          <p>Physics-aware U-Net denoising and signal inversion recover weak transient signals in NV-center sensing. My contribution focused on the loss design and reconstruction pipeline, combining physical constraints with learned denoising under low signal-to-noise conditions.</p>
         </article>
       </section>
       <section id="beyond" aria-labelledby="beyond-title">
-        <h2 id="beyond-title">Beyond research</h2>
-        <p>I co-founded <strong>Nanjing Qingning Sensing Technology</strong>, working on AI algorithms for wearable sensing and gait modeling. As co-founder and vice president of NJUPT's Innovation and Entrepreneurship Association, I helped organize talks and activities connecting students, alumni and industry.</p>
-        <p>Outside the lab, I enjoy football, marathon running and climbing. I have represented NJUPT in Nanjing intercollegiate athletics and the Jiangsu Provincial Games.</p>
+        <h2 id="beyond-title">Projects &amp; community</h2>
+        <article class="work">
+          <h3>Part2FullNet: perception under occlusion</h3>
+          <p>Lightweight spatial completion and 6D pose estimation for RoboMaster robots, combining geometric priors, depth calibration and EKF temporal fusion. Deployment on Jetson Orin NX uses TensorRT INT8 and DLA execution for real-time perception.</p>
+        </article>
+        <article class="work">
+          <h3>Robotic manipulation from simulation to reality</h3>
+          <p>At the Tsinghua AIR summer program, I worked on a MuJoCo and ACT imitation-learning pipeline for AIRBOT Play. Domain randomization and adaptive action chunks support policy transfer from simulation to real grasping tasks.</p>
+        </article>
+        <article class="work">
+          <h3>An intelligent desktop assistant</h3>
+          <p>A RISC-V system connecting YOLOv5s perception, DeepSeek-based task planning and SCARA execution. Model quantization, structured pruning and pipelined preprocessing support deployment on the EIC7700 NPU.</p>
+        </article>
+        <article class="work">
+          <h3>Wearable sensing &amp; entrepreneurship</h3>
+          <p>As co-founder of Nanjing Qingning Sensing Technology, I worked on the AI side of wearable sensing: multimodal data alignment, automated database construction, temporal gait modeling and personalized analysis. The work explores how plantar-pressure and motion signals can support continuous assessment.</p>
+        </article>
+        <p>I also helped organize innovation and entrepreneurship talks at NJUPT, connecting students, alumni and industry. Outside research, I enjoy football, marathon running and climbing.</p>
       </section>
       <footer>
         <span>© 2026 Jiahao Zheng · Updated October 2026</span>
@@ -110,3 +124,4 @@
   </main>
 </body>
 </html>
+
