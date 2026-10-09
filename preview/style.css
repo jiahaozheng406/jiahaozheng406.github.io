@@ -102,7 +102,7 @@ strong { font-weight: 600; }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--muted); }
 .experience-section { margin-top: 46px; }
 .experience { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin: 30px 0 46px; }
-.institution-logo { display: block; width: min(440px, 100%); }
+.institution-logo { display: block; width: min(330px, 75%); }
 .institution-logo img { display: block; width: 100%; height: auto; object-fit: contain; }
 .experience-body { min-width: 0; display: flex; flex-wrap: wrap; column-gap: 22px; align-items: baseline; }
 .experience-body h3 { flex-basis: 100%; margin: 0 0 5px; font-size: 16px; line-height: 1.5; font-weight: 600; }
