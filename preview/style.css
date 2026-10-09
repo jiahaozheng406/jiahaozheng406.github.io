@@ -73,6 +73,7 @@ strong { font-weight: 600; }
 .result { float: left; width: 190px; margin: 4px 22px 12px 0; }
 .result img { display: block; width: 100%; height: auto; object-fit: contain; }
 .result figcaption { margin-top: 7px; font-size: 11px; line-height: 1.5; color: var(--muted); }
+.result figcaption + a { display: block; margin-top: 14px; }
 .work:has(.result) > h3, .work:has(.result) > p { margin-left: 212px; }
 @media (max-width: 580px) {
   .result { float: none; width: min(100%, 340px); margin: 0 0 14px; }
