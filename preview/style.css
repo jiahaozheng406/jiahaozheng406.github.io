@@ -99,8 +99,8 @@ strong { font-weight: 600; }
 .work-links { display: flex; gap: 18px; }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--muted); }
 .experience-section { margin-top: 46px; }
-.experience { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 28px; margin: 30px 0 42px; align-items: start; }
-.institution-logo { display: flex; width: 136px; height: 100px; align-items: center; justify-content: center; }
+.experience { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; margin: 30px 0 42px; align-items: center; }
+.institution-logo { display: flex; width: 220px; height: 110px; align-items: center; justify-content: center; }
 .institution-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .experience-body { min-width: 0; }
 .experience-body h3 { margin: 0 0 5px; font-size: 16px; line-height: 1.5; font-weight: 600; }
@@ -111,15 +111,11 @@ footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; fl
 .experience-keywords { color: var(--muted); }
 .experience-lab { font-weight: 600; }
 .research-experience .experience { margin-bottom: 32px; }
-.research-experience .institution-logo { height: 88px; }
+.research-experience .institution-logo { height: 110px; }
 @media (max-width: 580px) {
-  .experience { grid-template-columns: 90px minmax(0, 1fr); gap: 18px; }
-  .institution-logo { width: 90px; height: 80px; }
-  .research-experience .institution-logo { height: 72px; }
-}
-@media (max-width: 360px) {
-  .experience { grid-template-columns: 1fr; gap: 14px; }
-  .institution-logo { width: 136px; }
+  .experience { grid-template-columns: 1fr; gap: 16px; }
+  .institution-logo, .research-experience .institution-logo { width: min(280px, 100%); height: 100px; justify-content: flex-start; }
+  .institution-logo img { object-position: left center; }
 }
 body > canvas { z-index: 10; pointer-events: none !important; }
 @media (min-width: 1000px) { .profile { position: sticky; top: 36px; } }
@@ -154,4 +150,3 @@ body > canvas { z-index: 10; pointer-events: none !important; }
   .page { padding: 0; gap: 30px; }
   a { color: inherit; }
 }
-
