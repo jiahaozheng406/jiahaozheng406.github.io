@@ -54,31 +54,35 @@
         <h2 id="robotics-title">Robotics &amp; machine vision</h2>
         <article class="work">
           <figure class="result"><a href="images/robomaster-vision.png"><img src="images/robomaster-vision.png" width="529" height="192" loading="lazy" alt="RoboMaster armor detection from image preprocessing to target classification"></a><a href="images/robomaster-match.png"><img src="images/robomaster-match.png" width="311" height="211" loading="lazy" alt="RoboMaster robots competing on the match field"></a></figure>
+          <div class="work-body">
           <h3>Part2FullNet: perception under occlusion</h3>
-          <p class="meta">RoboMaster RMUL · Robot vision and embedded deployment</p>
-          <p>Visual target detection, tracking and spatial completion for sentry robots. My work connects geometric priors and temporal fusion to robust pose estimation under occlusion, with deployment optimization on Jetson Orin NX.</p>
+          <p class="meta"><strong>Third Place · RoboMaster RMUL 2026, Jiangsu Station</strong><br><em>3V3 competition · Robot vision and embedded deployment</em></p>
+          <p>For <em>RoboMaster 3V3 robot combat</em>, I developed sentry vision to track moving armor plates despite occlusion and incomplete corners. <strong>Part2FullNet</strong> recovers spatial structure and 6D pose from partial RGB observations using geometric priors, depth calibration and EKF temporal fusion. Jetson Orin NX deployment with TensorRT INT8 and DLA achieved <span class="metric">&lt;25 ms</span> end-to-end latency, <span class="metric">&gt;75%</span> dynamic-target hit rate and <span class="metric">&lt;7.5 mm</span> localization error in project evaluation.</p>
+        </div>
         </article>
         <article class="work">
           <figure class="result"><a href="images/manipulation-mujoco.png"><img src="images/manipulation-mujoco.png" width="1672" height="941" loading="lazy" alt="MuJoCo simulation of an AIRBOT Play arm with tabletop grasping objects"></a><a href="images/manipulation-real.png" style="display: block; margin-top: 14px"><img src="images/manipulation-real.png" width="307" height="190" loading="lazy" alt="Physical robotic arm performing a tabletop manipulation demonstration"></a></figure>
+          <div class="work-body">
           <h3>Robotic manipulation from simulation to reality</h3>
           <p class="meta">Tsinghua AIR summer program</p>
-          <p>At the Tsinghua AIR summer program, I worked on a Sim2Real manipulation pipeline for AIRBOT Play, connecting a MuJoCo tabletop environment with policy learning and deployment on the physical robotic arm. The goal was to transfer learned grasping behavior from simulation to real objects.</p>
-          <p>The work combined ACT imitation learning, domain randomization and adaptive action chunks, covering simulation-based policy evaluation and real-world grasping tests. It brought together virtual task development and hands-on robot deployment, with a focus on bridging the gap between simulated and physical execution.</p>
+          <p>I built a <strong>Sim2Real</strong> manipulation pipeline for AIRBOT Play, connecting MuJoCo simulation, ACT imitation learning and real-robot grasping. Domain randomization and adaptive action chunks supported transfer from virtual tasks to physical execution.</p>
+        </div>
         </article>
       </section>
       <section id="embedded" aria-labelledby="embedded-title">
         <h2 id="embedded-title">Embedded AI &amp; hardware systems</h2>
         <article class="work">
           <figure class="result"><a href="images/desktop-assistant.png"><img src="images/desktop-assistant.png" width="1016" height="889" loading="lazy" alt="Physical desktop-cleaning robot with camera, SCARA mechanism and conversational interface"></a></figure>
+          <div class="work-body">
           <h3>An intelligent desktop-cleaning assistant</h3>
-          <p class="meta">National Undergraduate Integrated Circuit Innovation and Entrepreneurship Competition</p>
-          <p>A working perception–planning–execution system on a RISC-V platform: YOLOv5s detects objects, language-model planning translates instructions into actions, and a SCARA mechanism executes them. Quantization, pruning and pipelined preprocessing support EIC7700 NPU deployment.</p>
-          <p>National Second Prize and East China Regional First Prize, 2025.</p>
+          <p class="meta"><strong>National Second Prize, 2025</strong><br><em>National Undergraduate Integrated Circuit Innovation and Entrepreneurship Competition</em></p>
+          <p>A <em>perception–planning–execution</em> system on RISC-V: YOLOv5s detects tabletop objects, a DeepSeek-based agent interprets instructions and plans tidying tasks, and a SCARA arm executes them. I adapted the detector to the <strong>EIC7700 NPU</strong> through quantization, structured pruning and hardware-aware data layouts, overlapping preprocessing with inference. Project evaluation reached <span class="metric">97.4% mAP</span> and <span class="metric">3 ms</span> inference latency.</p>
+        </div>
         </article>
       </section>
       <section id="venture" aria-labelledby="venture-title">
-        <h2 id="venture-title">Wearable sensing &amp; entrepreneurship</h2>
-        <p class="meta">Co-founder · AI development · Nanjing Qingning Sensing Technology</p>
+        <h2 id="venture-title">Wearable sensing &amp; AI for healthcare</h2>
+        <p class="meta"><strong>Co-founder · AI development</strong><br><em>Nanjing Qingning Sensing Technology</em></p>
         <p>To make everyday walking and foot-pressure changes easier to understand, we developed a smart-insole prototype for ongoing movement assessment and personalized feedback.</p>
         <p>As co-founder responsible for AI development, I worked across data collection and organization, analysis development, and integration with the wearable prototype. The project focuses on turning everyday movement records into useful information for personal well-being.</p>
         <div class="gallery venture-media">
@@ -93,13 +97,12 @@
         <h2 id="honors-title">Selected competitions &amp; honors</h2>
         <h3 class="subheading">Robotics, hardware &amp; innovation</h3>
         <ul class="award-list">
-          <li><strong>RoboMaster 2026 RMUL, Jiangsu Station</strong> · Third Place and First Prize, 3V3 competition.</li>
+          <li><strong>China International College Students’ Innovation Competition, Sep 2026</strong> · Gold Award, Jiangsu Provincial Competition.</li>
           <li><strong>China Robot Competition &amp; RoboCup China Open, 2026</strong> · National Third Prizes in the two competition divisions.</li>
-          <li><strong>National Undergraduate Integrated Circuit Innovation and Entrepreneurship Competition, 2025</strong> · National Second Prize; East China Regional First Prize.</li>
+          <li><strong>National Undergraduate Integrated Circuit Innovation and Entrepreneurship Competition, 2025</strong> · National Second Prize.</li>
           <li><strong>iCAN 6G+X Frontier Technology Challenge, 2026</strong> · National Second Prize.</li>
           <li><strong>iCAN AI Challenge, 2025</strong> · National Third Prize.</li>
-          <li><strong>Global Campus AI Algorithm Elite Competition</strong> · Provincial First Prize; National Honorable Award.</li>
-          <li><strong>Jiangsu University Student Physics and Experimental Technology Innovation Competition</strong> · Second Prize, 2025 and 2026.</li>
+          <li><strong>Global Campus AI Algorithm Elite Competition</strong> · National Honorable Award.</li>
         </ul>
         <h3 class="subheading">Mathematics &amp; modeling</h3>
         <ul class="award-list">
@@ -123,3 +126,4 @@
   </main>
 </body>
 </html>
+

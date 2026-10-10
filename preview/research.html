@@ -54,9 +54,11 @@
             <a href="images/cad-comparison.png"><img src="images/cad-comparison.png" width="1534" height="643" loading="lazy" alt="Point-cloud inputs and CAD reconstruction comparisons with CAD-SIGNet, CAD-Recode, Cadrille and ground truth"></a>
             
           </figure>
+          <div class="work-body">
           <h3>TopoGen: Topology-Guided Multimodal Generation for Executable CadQuery Synthesis</h3>
-          <p class="meta">ICLR 2027 submission · Second author</p>
+          <p class="meta"><strong>ICLR 2027 submission</strong> · <em>Second author</em></p>
           <p>Topology-guided CAD programs from point clouds and multi-view images. Constraint graphs and BRep-derived supervision connect visual observations to executable modeling operations. Topology Relative Policy Optimization (ToRPO) uses essential-operation matching for structural feedback, while TopoCAD-1M augments training data with topology constraints.</p>
+        </div>
         </article>
         <article class="work">
           <figure class="result">
@@ -65,33 +67,42 @@
             <a href="images/kv-results.png"><img src="images/kv-results.png" width="1745" height="970" loading="lazy" alt="Radar-chart benchmark comparisons across seven language models"></a>
             
           </figure>
+          <div class="work-body">
           <h3>KV Thickets: Task Experts from Random Prefix-Cache Perturbations</h3>
-          <p class="meta">ICLR 2027 submission · Co-author</p>
+          <p class="meta"><strong>ICLR 2027 submission</strong> · <em>Co-author</em></p>
           <p>Reusable task adaptation through random prefix-KV perturbations, keeping model weights and prefix text fixed. Candidates are selected on labeled examples and reused across inputs, with batched evaluation under shared weights in vLLM. The study spans seven models and seven benchmarks; its evaluation is descriptive because benchmark pools had been examined previously.</p>
+        </div>
         </article>
         <article class="work">
           <figure class="result"><a href="images/seggeogs-full.png"><img src="images/seggeogs-full.png" width="899" height="981" loading="lazy" alt="Sparse-view rendering comparisons between ground truth, 3DGS baselines and SegGeoGS"></a></figure>
+          <div class="work-body">
           <h3><a href="https://doi.org/10.1145/3805622.3810640">Towards Robust Sparse-View 3D Gaussian Splatting via Hierarchical Depth and Multi-View Consistency</a></h3>
-          <p class="meta">ACM ICMR 2026 · Second author</p>
+          <p class="meta"><strong>ACM ICMR 2026</strong> · <em>Second author</em></p>
           <p>Monocular-depth alignment with sparse SfM geometry, semantic depth supervision and multi-view consistency improve reconstruction from sparse observations. My work covered depth alignment, hierarchical supervision and evaluation, addressing geometric drift and overfitting when only a few views are available.</p>
-          <p class="work-links"><a href="https://doi.org/10.1145/3805622.3810640">Paper</a><a href="https://github.com/jiahaozheng406/3DGS-Research">Code</a></p>
+        </div>
         </article>
         <article class="work">
-          <figure class="result"><a href="images/real-sim-real.png"><img src="images/real-sim-real.png" width="939" height="590" loading="lazy" alt="RGB-D quadruped navigation and traversability observations across outdoor scenes"></a></figure><h3>Real2Sim–Sim2Real: an end-to-end embodied navigation pipeline</h3>
-          <p class="meta">Research at ICT-CAS IIP-VIPL · 2025–2026</p>
+          <figure class="result"><a href="images/real-sim-real.png"><img src="images/real-sim-real.png" width="939" height="590" loading="lazy" alt="RGB-D quadruped navigation and traversability observations across outdoor scenes"></a></figure>
+          <div class="work-body"><h3>Real2Sim–Sim2Real: an end-to-end embodied navigation pipeline</h3>
+          <p class="meta"><strong>Research at ICT-CAS IIP-VIPL</strong> · <em>2025–2026</em></p>
           <p>An end-to-end workflow from real-world observations to reconstructed, editable simulation environments and back to physical robots. Dynamic filtering and globally aligned 3DGS support scene reconstruction; Isaac Sim connects scene assets to policy learning, followed by teacher–student transfer and RGB-D quadruped navigation in the real world.</p>
+        </div>
         </article>
         <article class="work">
           <figure class="result"><a href="images/thermometry-method.png"><img src="images/thermometry-method.png" width="890" height="550" loading="lazy" alt="Measurement, spectral dataset construction and physics-aware thermal mapping pipeline"></a><a href="images/apl-chip-temperature.png"><img src="images/apl-chip-temperature.png" width="749" height="264" loading="lazy" alt="Chip measurement region and corresponding two-dimensional temperature map"></a></figure>
+          <div class="work-body">
           <h3><a href="https://doi.org/10.1063/5.0339528">Diamond Thermometry Beyond the Zero-Phonon Line via Physics-Aware Spectral Trend Learning</a></h3>
-          <p class="meta">Applied Physics Letters, 2026 · First author</p>
+          <p class="meta"><strong>Applied Physics Letters, 2026</strong> · <em>First author</em></p>
           <p>Physics-aware spectral learning for robust NV-center thermometry when conventional zero-phonon-line features become unreliable. I designed a physics-constrained ResNet to learn phonon-sideband evolution and evaluated cross-sample adaptation, connecting spectral structure with temperature inference.</p>
+        </div>
         </article>
         <article class="work">
           <figure class="result"><a href="images/pulse-results.png"><img src="images/pulse-results.png" width="830" height="556" loading="lazy" alt="Measured and denoised pulse waveforms, gradient features and recovered digital sequence"></a><a href="images/cpb-apparatus.png"><img src="images/cpb-apparatus.png" width="756" height="690" loading="lazy" alt="NV-center on-chip pulse sensing experimental setup"></a></figure>
+          <div class="work-body">
           <h3><a href="https://doi.org/10.1088/1674-1056/ae5f88">Real-Time On-Chip Nanosecond Pulse Capture with NV Centers: U-Net Denoising and Signal Reconstruction</a></h3>
-          <p class="meta">Chinese Physics B · Accepted manuscript, 2026 · Second author</p>
-          <p>Physics-aware U-Net denoising and signal inversion recover weak transient signals in NV-center sensing. My contribution focused on the loss design and reconstruction pipeline, combining physical constraints with learned denoising under low signal-to-noise conditions.</p>
+          <p class="meta"><strong>Chinese Physics B</strong> · <em>Accepted manuscript, 2026 · Second author</em></p>
+          <p>An <strong>AI-assisted pulse-recovery pipeline</strong> pairs U-Net denoising with physical constraints to recover weak NV-center signals. My work focused on <em>physics-aware loss design and digital signal inversion</em>, evaluated on <span class="metric">40,000</span> pulse pairs. Gradient-driven state latching and two-stage timing compensation turn denoised analog traces into digital sequences, preserving pulse transitions rather than merely smoothing noise. The pipeline achieved <span class="metric">21.39–29.57 dB</span> SNR improvement, linking learned denoising to on-chip waveform and sequence reconstruction.</p>
+        </div>
         </article>
       </section>
       <footer>
@@ -102,3 +113,4 @@
   </main>
 </body>
 </html>
+
