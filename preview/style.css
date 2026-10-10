@@ -113,6 +113,11 @@ footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; fl
 .experience-keywords { color: var(--muted); }
 .experience-lab { font-weight: 600; flex-basis: 100%; }
 .research-experience .experience { margin-bottom: 42px; }
+#education .experience { gap: 10px; margin: 18px 0 26px; }
+#education .experience-body h3 { margin-bottom: 3px; line-height: 1.4; }
+#education .experience-body p { margin: 2px 0; line-height: 1.45; }
+#education .experience-body .experience-date { margin-bottom: 2px; }
+#education .experience:last-child { margin-bottom: 0; }
 @media (max-width: 580px) {
   .experience { grid-template-columns: 1fr; gap: 16px; }
   .experience-body { column-gap: 16px; }
