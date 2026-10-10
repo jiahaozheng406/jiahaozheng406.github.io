@@ -81,7 +81,14 @@ nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text
 section { margin: 0 0 40px; scroll-margin-top: 25px; }
 h2 { font-size: 23px; font-weight: 650; line-height: 1.3; margin: 0 0 19px; }
 p { margin: 0 0 16px; }
-strong { font-weight: 600; }
+strong { font-weight: 700; color: var(--ink); }
+.content em { font-style: italic; }
+.content h2 { font-weight: 700; }
+.journey h4, .experience-body h3 { font-weight: 650; }
+.journey p, .page-intro { color: #505960; }
+.experience-keywords { font-style: italic; }
+.news dt, .experience-date { font-family: Consolas, "Courier New", monospace; }
+.award-list strong { font-weight: 650; }
 .subheading { font-size: 16px; font-weight: 600; margin: 23px 0 9px; }
 .interests { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 22px; margin: 0; padding-left: 19px; font-size: 15px; }
 .interests li::marker { color: #8c9599; }
@@ -94,8 +101,11 @@ strong { font-weight: 600; }
 .result { width: 190px; margin: 0; }
 .work-body { min-width: 0; }
 .work .meta { border-left: 2px solid var(--line); padding-left: 10px; margin: 8px 0 12px; }
-.meta strong { color: var(--ink); font-weight: 700; }
-.metric { font-family: Consolas, "Courier New", monospace; font-weight: 600; }
+.meta strong { color: #171b1f; font-weight: 750; font-size: 14px; font-style: normal; }
+.meta em { color: #505960; font-size: 13px; }
+#venture > .meta { font-size: 13px; line-height: 1.65; margin-bottom: 18px; }
+#venture > .meta strong { font-size: 15px; }
+.metric { font-family: Consolas, "Courier New", monospace; font-weight: 700; color: #171b1f; font-variant-numeric: tabular-nums; }
 .result img { display: block; width: 100%; height: auto; object-fit: contain; }
 .result figcaption { margin-top: 7px; font-size: 11px; line-height: 1.5; color: var(--muted); }
 .result figcaption + a { display: block; margin-top: 14px; }
@@ -106,7 +116,7 @@ strong { font-weight: 600; }
   .result { width: min(100%, 340px); margin: 0; }
   .work:has(.result) > h3, .work:has(.result) > p { margin-left: 0; }
 }
-.work h3 { font-size: 16px; line-height: 1.55; font-weight: 600; margin: 0 0 5px; }
+.work h3 { font-size: 17px; line-height: 1.45; font-weight: 650; margin: 0 0 5px; }
 .work h3 a { color: var(--ink); }
 .work h3 a:hover { color: var(--link); }
 .work p { font-size: 14px; margin: 5px 0 0; }
