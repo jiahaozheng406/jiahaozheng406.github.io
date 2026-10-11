@@ -14,3 +14,6 @@ if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motio
   const canvas = document.querySelector("body > canvas");
   if (canvas) canvas.setAttribute("aria-hidden", "true");
 }
+
+const evaVideo = document.querySelector("#eva video");
+if (evaVideo) evaVideo.defaultPlaybackRate = evaVideo.playbackRate = 2.5;
