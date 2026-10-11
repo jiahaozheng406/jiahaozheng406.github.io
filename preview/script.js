@@ -16,4 +16,4 @@ if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motio
 }
 
 const evaVideo = document.querySelector("#eva video");
-if (evaVideo) evaVideo.defaultPlaybackRate = evaVideo.playbackRate = 2.5;
+if (evaVideo) evaVideo.defaultPlaybackRate = evaVideo.playbackRate = 0.4;
