@@ -1,7 +1,7 @@
 .portrait.focus-carousel { width:100%; overflow:visible; aspect-ratio:auto; border-radius:0; }
 @media(min-width:761px) {
-  .focus-carousel .portrait-stage { aspect-ratio:240 / 304; }
-  .focus-carousel .portrait-slide { left:5%; width:90%; }
+  .focus-carousel .portrait-stage { aspect-ratio:240 / 340; }
+  .focus-carousel .portrait-slide { left:5%; width:90%; aspect-ratio:2/3; }
   .focus-carousel .portrait-slide[data-slot=left] { transform:translate(-12%,8px) scale(.88); }
   .focus-carousel .portrait-slide[data-slot=right] { transform:translate(12%,8px) scale(.88); }
 }
