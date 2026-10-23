@@ -35,6 +35,16 @@ if (host) {
     });
   }
   host.replaceChildren(stage, dots); select(0);
+  const chineseName = document.querySelector('.profile .chinese-name');
+  if (chineseName) {
+    const signature = document.createElement('span');
+    signature.className = 'profile-signature';
+    const image = document.createElement('img');
+    image.src = new URL('images/signature.png', import.meta.url);
+    image.alt = '郑家浩'; image.width = 1890; image.height = 900;
+    signature.append(image);
+    chineseName.firstChild.replaceWith(signature);
+  }
   host.addEventListener('keydown', event => {
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
       event.preventDefault(); select(current + (event.key === 'ArrowRight' ? 1 : -1));
