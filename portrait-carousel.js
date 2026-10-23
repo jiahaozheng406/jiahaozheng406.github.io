@@ -1,7 +1,7 @@
 const photos = [
   ['profile.jpg', 'Jiahao Zheng outdoors', '55% 55%'],
   ['images/portrait-business.jpg', 'Jiahao Zheng in a shirt and tie', '50% 20%'],
-  ['images/portrait-formal.jpg', 'Jiahao Zheng in formal attire', '50% 35%']
+  ['images/portrait-formal-hd.png', 'Jiahao Zheng in formal attire', '50% 25%']
 ];
 const host = document.querySelector('.portrait');
 if (host) {
