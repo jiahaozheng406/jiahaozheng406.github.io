@@ -17,3 +17,4 @@ if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motio
 
 const evaVideo = document.querySelector("#eva video");
 if (evaVideo) evaVideo.defaultPlaybackRate = evaVideo.playbackRate = 0.4;
+import './portrait-carousel.js';

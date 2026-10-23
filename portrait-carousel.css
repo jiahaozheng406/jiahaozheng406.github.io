@@ -1,0 +1,13 @@
+.portrait.focus-carousel { width:100%; overflow:visible; aspect-ratio:auto; border-radius:0; }
+.portrait-stage { position:relative; width:100%; aspect-ratio:1; touch-action:pan-y; user-select:none; }
+.portrait-slide { position:absolute; top:0; left:12.5%; width:75%; aspect-ratio:8/9; padding:0; border:0; border-radius:4px; overflow:hidden; background:#fff; cursor:pointer; transition:transform 420ms ease,filter 420ms ease,opacity 420ms ease; }
+.portrait .portrait-slide img { position:static; width:100%; height:100%; max-width:100%; object-fit:cover; display:block; }
+.portrait-slide[data-slot=center] { transform:translateX(0) scale(1); filter:blur(0); opacity:1; z-index:3; }
+.portrait-slide[data-slot=left] { transform:translate(-24%,8px) scale(.88); filter:blur(1.4px); opacity:.7; z-index:1; }
+.portrait-slide[data-slot=right] { transform:translate(24%,8px) scale(.88); filter:blur(1.4px); opacity:.7; z-index:1; }
+.portrait-dots { display:flex; justify-content:center; gap:2px; }
+.portrait-dots button { width:24px; height:24px; padding:8px; border:0; background:none; cursor:pointer; }
+.portrait-dots button::after { content:''; display:block; width:6px; height:6px; border-radius:50%; background:#c8d1d3; }
+.portrait-dots button[aria-current=true]::after { background:#176c76; }
+.focus-carousel:focus-visible,.portrait-slide:focus-visible,.portrait-dots button:focus-visible { outline:2px solid #176c76; outline-offset:3px; }
+@media(prefers-reduced-motion:reduce) { .portrait-slide { transition:none; } }
