@@ -1,4 +1,9 @@
 .portrait.focus-carousel { width:100%; overflow:visible; aspect-ratio:auto; border-radius:0; }
+.profile-social { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:9px; }
+.profile-social .wechat-trigger { margin:0; }
+.xiaohongshu-link { display:inline-flex; align-items:center; gap:5px; color:var(--link); font-size:14px; white-space:nowrap; }
+.xiaohongshu-link svg { flex:none; }
+@media(max-width:760px) { .profile-social { justify-content:flex-start; flex-wrap:wrap; gap:8px 12px; } }
 .profile .chinese-name { display:flex; align-items:center; justify-content:center; gap:8px; }
 .profile-signature { position:relative; display:inline-block; width:112px; height:40px; overflow:hidden; flex:none; }
 .profile-signature img { position:absolute; width:174px; height:auto; max-width:none; left:-31px; top:-23.5px; }
@@ -21,3 +26,4 @@
 .portrait-dots button[aria-current=true]::after { background:#176c76; }
 .focus-carousel:focus-visible,.portrait-slide:focus-visible,.portrait-dots button:focus-visible { outline:2px solid #176c76; outline-offset:3px; }
 @media(prefers-reduced-motion:reduce) { .portrait-slide { transition:none; } }
+
