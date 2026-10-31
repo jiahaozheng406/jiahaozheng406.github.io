@@ -67,3 +67,18 @@ if (host) {
   });
   stage.addEventListener('pointercancel', () => { start = null; });
 }
+
+const wechat = document.querySelector('.wechat-trigger');
+if (wechat) {
+  const social = document.createElement('div');
+  social.className = 'profile-social';
+  wechat.before(social);
+  const xiaohongshu = document.createElement('a');
+  xiaohongshu.className = 'xiaohongshu-link';
+  xiaohongshu.href = 'https://www.xiaohongshu.com/user/profile/6486599e000000002a0375c5';
+  xiaohongshu.target = '_blank';
+  xiaohongshu.rel = 'noopener noreferrer';
+  xiaohongshu.title = 'Xiaohongshu: 2208081922';
+  xiaohongshu.innerHTML = "Invoke-WebRequest: \r\nLine |\r\n   2 |  (Invoke-WebRequest -Uri 'https://cdn.jsdelivr.net/npm/simple-icons@v1 …\r\n     |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n     | Received an unexpected EOF or 0 bytes from the transport stream.<span>Xiaohongshu</span>";
+  social.append(wechat, xiaohongshu);
+}
