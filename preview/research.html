@@ -24,7 +24,7 @@
   </header>
   <main class="page" id="top">
     <aside class="profile" aria-label="Profile and contact">
-      <div class="portrait"><img src="../profile.jpg" width="3840" height="2160" alt="Portrait of Jiahao Zheng" fetchpriority="high"></div>
+      <div class="portrait"><img decoding="async" src="../profile.jpg" width="3840" height="2160" alt="Portrait of Jiahao Zheng" fetchpriority="high"></div>
       <h1>Jiahao Zheng</h1>
       <p class="chinese-name" lang="zh-CN">郑家浩 <span class="aka">aka ++</span></p>
       <p class="role">Undergraduate student</p>
@@ -36,7 +36,7 @@
 <a href="https://orcid.org/0009-0006-1588-8788" target="_blank" rel="noreferrer" title="ORCID" aria-label="ORCID"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="6.2" y="15.7" font-size="8.6" fill="#fff" font-family="Arial,sans-serif" font-weight="700">iD</text></svg><span>ORCID</span></a>
 <a href="mailto:jiahaozheng2005@163.com?subject=CV%20request" title="Curriculum Vitae" aria-label="Curriculum Vitae"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 2h10l4 4v16H5V2Zm9 1.8V7h3.2L14 3.8ZM8 10h8v1.6H8V10Zm0 3.2h8v1.6H8v-1.6Zm0 3.2h5.2V18H8v-1.6Z"/><text x="7.1" y="8.6" font-size="4.4" fill="#fff" font-family="Arial,sans-serif" font-weight="700">CV</text></svg><span>CV upon request</span></a>
 </div>
-      <button class="wechat-trigger" type="button" aria-haspopup="dialog" aria-controls="wechat-dialog" title="Show WeChat ID"><img src="images/wechat.svg" width="17" height="17" alt="">WeChat</button>
+      <button class="wechat-trigger" type="button" aria-haspopup="dialog" aria-controls="wechat-dialog" title="Show WeChat ID"><img decoding="async" src="images/wechat.svg" width="17" height="17" alt="">WeChat</button>
       <dialog id="wechat-dialog" aria-labelledby="wechat-title">
         <form method="dialog"><button class="dialog-close" aria-label="Close" title="Close">&times;</button></form>
         <h2 id="wechat-title">WeChat</h2>
@@ -49,9 +49,9 @@
         <h2 id="research-title">Selected research</h2>
         <article class="work">
           <figure class="result">
-            <a href="images/cad-examples.png"><img src="images/cad-examples.png" width="1595" height="971" loading="lazy" alt="Gallery of diverse CAD models from the TopoGen paper"></a>
+            <a href="images/cad-examples.png"><img decoding="async" src="images/cad-examples.png" width="1595" height="971" loading="eager" fetchpriority="high" alt="Gallery of diverse CAD models from the TopoGen paper"></a>
             
-            <a href="images/cad-comparison.png"><img src="images/cad-comparison.png" width="1534" height="643" loading="lazy" alt="Point-cloud inputs and CAD reconstruction comparisons with CAD-SIGNet, CAD-Recode, Cadrille and ground truth"></a>
+            <a href="images/cad-comparison.png"><img decoding="async" src="images/cad-comparison.png" width="1534" height="643" loading="lazy" alt="Point-cloud inputs and CAD reconstruction comparisons with CAD-SIGNet, CAD-Recode, Cadrille and ground truth"></a>
             
           </figure>
           <div class="work-body">
@@ -62,9 +62,9 @@
         </article>
         <article class="work">
           <figure class="result">
-            <a href="images/kv-overview.png"><img src="images/kv-overview.png" width="1275" height="841" loading="lazy" alt="KV Thickets motivation and search over prefix key-value perturbations under frozen model weights"></a>
+            <a href="images/kv-overview.png"><img decoding="async" src="images/kv-overview.png" width="1275" height="841" loading="lazy" alt="KV Thickets motivation and search over prefix key-value perturbations under frozen model weights"></a>
             
-            <a href="images/kv-results.png"><img src="images/kv-results.png" width="1745" height="970" loading="lazy" alt="Radar-chart benchmark comparisons across seven language models"></a>
+            <a href="images/kv-results.png"><img decoding="async" src="images/kv-results.png" width="1745" height="970" loading="lazy" alt="Radar-chart benchmark comparisons across seven language models"></a>
             
           </figure>
           <div class="work-body">
@@ -74,7 +74,7 @@
         </div>
         </article>
         <article class="work">
-          <figure class="result"><a href="images/seggeogs-full.png"><img src="images/seggeogs-full.png" width="899" height="981" loading="lazy" alt="Sparse-view rendering comparisons between ground truth, 3DGS baselines and SegGeoGS"></a></figure>
+          <figure class="result"><a href="images/seggeogs-full.png"><img decoding="async" src="images/seggeogs-full.png" width="899" height="981" loading="lazy" alt="Sparse-view rendering comparisons between ground truth, 3DGS baselines and SegGeoGS"></a></figure>
           <div class="work-body">
           <h3><a href="https://doi.org/10.1145/3805622.3810640">Towards Robust Sparse-View 3D Gaussian Splatting via Hierarchical Depth and Multi-View Consistency</a></h3>
           <p class="meta"><strong>ACM ICMR 2026</strong> · <em>Second author</em></p>
@@ -82,14 +82,14 @@
         </div>
         </article>
         <article class="work">
-          <figure class="result"><video src="images/real2sim-comparison.mp4" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="metadata" style="display: block; width: 100%; height: auto; margin-bottom: 14px; pointer-events: none" aria-label="Original scene, Gaussian splatting and mesh comparison"></video><a href="images/real-sim-real.png"><img src="images/real-sim-real.png" width="939" height="590" loading="lazy" alt="RGB-D quadruped navigation and traversability observations across outdoor scenes"></a></figure>
+          <figure class="result"><video data-src="images/real2sim-comparison.mp4" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" style="display: block; width: 100%; height: auto; margin-bottom: 14px; pointer-events: none" aria-label="Original scene, Gaussian splatting and mesh comparison"></video><a href="images/real-sim-real.png"><img decoding="async" src="images/real-sim-real.png" width="939" height="590" loading="lazy" alt="RGB-D quadruped navigation and traversability observations across outdoor scenes"></a></figure>
           <div class="work-body"><h3>Real2Sim–Sim2Real: an end-to-end embodied navigation pipeline</h3>
           <p class="meta"><strong>Research at ICT-CAS IIP-VIPL</strong> · <em>2025–2026</em></p>
           <p>An end-to-end workflow from real-world observations to reconstructed, editable simulation environments and back to physical robots. Dynamic filtering and globally aligned 3DGS support scene reconstruction; Isaac Sim connects scene assets to policy learning, followed by teacher–student transfer and RGB-D quadruped navigation in the real world.</p>
         </div>
         </article>
         <article class="work">
-          <figure class="result"><a href="images/thermometry-method.png"><img src="images/thermometry-method.png" width="890" height="550" loading="lazy" alt="Measurement, spectral dataset construction and physics-aware thermal mapping pipeline"></a><a href="images/apl-chip-temperature.png"><img src="images/apl-chip-temperature.png" width="749" height="264" loading="lazy" alt="Chip measurement region and corresponding two-dimensional temperature map"></a></figure>
+          <figure class="result"><a href="images/thermometry-method.png"><img decoding="async" src="images/thermometry-method.png" width="890" height="550" loading="lazy" alt="Measurement, spectral dataset construction and physics-aware thermal mapping pipeline"></a><a href="images/apl-chip-temperature.png"><img decoding="async" src="images/apl-chip-temperature.png" width="749" height="264" loading="lazy" alt="Chip measurement region and corresponding two-dimensional temperature map"></a></figure>
           <div class="work-body">
           <h3><a href="https://doi.org/10.1063/5.0339528">Diamond Thermometry Beyond the Zero-Phonon Line via Physics-Aware Spectral Trend Learning</a></h3>
           <p class="meta"><strong>Applied Physics Letters, 2026</strong> · <em>First author</em></p>
@@ -97,7 +97,7 @@
         </div>
         </article>
         <article class="work">
-          <figure class="result"><a href="images/pulse-results.png"><img src="images/pulse-results.png" width="830" height="556" loading="lazy" alt="Measured and denoised pulse waveforms, gradient features and recovered digital sequence"></a><a href="images/cpb-apparatus.png"><img src="images/cpb-apparatus.png" width="756" height="690" loading="lazy" alt="NV-center on-chip pulse sensing experimental setup"></a></figure>
+          <figure class="result"><a href="images/pulse-results.png"><img decoding="async" src="images/pulse-results.png" width="830" height="556" loading="lazy" alt="Measured and denoised pulse waveforms, gradient features and recovered digital sequence"></a><a href="images/cpb-apparatus.png"><img decoding="async" src="images/cpb-apparatus.png" width="756" height="690" loading="lazy" alt="NV-center on-chip pulse sensing experimental setup"></a></figure>
           <div class="work-body">
           <h3><a href="https://doi.org/10.1088/1674-1056/ae5f88">Real-Time On-Chip Nanosecond Pulse Capture with NV Centers: U-Net Denoising and Signal Reconstruction</a></h3>
           <p class="meta"><strong>Chinese Physics B</strong> · <em>Accepted manuscript, 2026 · Second author</em></p>
