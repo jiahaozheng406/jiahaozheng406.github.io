@@ -18,3 +18,26 @@ if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motio
 const evaVideo = document.querySelector("#eva video");
 if (evaVideo) evaVideo.defaultPlaybackRate = evaVideo.playbackRate = 0.4;
 import './portrait-carousel.js';
+
+const deferredVideos = document.querySelectorAll('video[data-src]');
+function loadVideo(video) {
+  if (!video.dataset.src) return;
+  video.src = video.dataset.src;
+  delete video.dataset.src;
+  video.load();
+}
+if ('IntersectionObserver' in window) {
+  const videoObserver = new IntersectionObserver(entries => {
+    entries.forEach(({ target: video, isIntersecting }) => {
+      if (isIntersecting) {
+        loadVideo(video);
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { rootMargin: '300px 0px' });
+  deferredVideos.forEach(video => videoObserver.observe(video));
+} else {
+  deferredVideos.forEach(loadVideo);
+}
