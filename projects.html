@@ -45,6 +45,7 @@
       <p class="profile-note">3D vision &amp; embodied intelligence</p>
     </aside>
     <div class="content" id="page-content">
+      <p><a href="#zh" lang="zh-CN">阅读中文</a></p>
       <section aria-labelledby="projects-title">
         <h2 id="projects-title">Projects &amp; Honors</h2>
         <p class="page-intro">From visual algorithms to working robots and sensing prototypes.</p>
@@ -55,7 +56,7 @@
         <article id="lmms-eval">
           <h3><a href="https://github.com/EvolvingLMMs-Lab/lmms-eval">LMMs-Eval: trustworthy multimodal evaluation</a></h3>
           <p class="meta"><strong>Open-source Contributor</strong> · Oct 2026 · <em>Project: ~4.5k GitHub stars</em></p>
-          <p>LMMs-Eval provides unified evaluation infrastructure for multimodal model development, supporting <strong>100+ image, video, audio and text tasks</strong>. To address a community-reported mismatch between AI2D questions and diagram variants, I audited all <strong>3,088 questions</strong> and added per-question image selection, with pinned data, checksum validation, regression tests and real-model pipeline checks. The contribution provides more reliable, reproducible inputs and clearer score interpretation while preserving historical results.</p>
+          <p>LMMs-Eval provides unified evaluation infrastructure for multimodal model development, supporting <strong>100+ image, video, audio and text tasks</strong>. To address a community-reported mismatch between AI2D questions and diagram variants, I audited all <strong>3,088 questions</strong> and added per-question image selection, with pinned data, checksum validation, regression tests and real-model pipeline checks. The new task pairs each question with its intended diagram, making its inputs reproducible while keeping the legacy task available for comparison.</p>
           <p class="links"><a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/issues/1576">Issue</a> · <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/1590">Merged PR</a></p>
         </article>
       </section>
@@ -131,8 +132,24 @@
           <li><strong>Tsinghua AIR summer program</strong> · Outstanding Camper.</li>
         </ul>
       </section>
+      <section id="zh" lang="zh-CN" aria-labelledby="zh-title">
+        <h2 id="zh-title">项目与荣誉</h2>
+        <h3>开源贡献：lmms-eval 多模态评测</h3>
+        <p>我核查了 AI2D 的 3,088 道题目，为每道题加入对应配图的选择机制，解决题目与图示版本错配。改动固定了数据版本，并加入校验和、回归测试和真实模型流程检查。原有评测任务保留，以便比较历史结果。项目约有 4,500 个 GitHub 星标。<a href="https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/1590">查看已合并的 PR</a>。</p>
+        <h3>机器人、机器视觉与嵌入式系统</h3>
+        <ul>
+        <li><strong>EVA 六自由度机器人系统：</strong>与 Liyao Wu 合作，将相机感知、模型推理与运动控制整合在同一套系统中。浏览器端支持三维可视化和交互控制，Python 协调感知及设备，C++ 运动学层驱动真机执行。</li>
+        <li><strong>RoboMaster 哨兵视觉：</strong>通过几何先验、深度标定和 EKF 时序融合，从遮挡下的部分 RGB 观测恢复装甲板结构与位姿，并在 Jetson Orin NX 上部署。项目测试中的端到端延迟低于 25 ms。</li>
+        <li><strong>清华 AIR 机械臂 Sim2Real：</strong>串联 MuJoCo 任务开发、ACT 模仿学习和真机部署，采用域随机化及自适应动作分块。真机测试中抓取成功率超过 90%。</li>
+        <li><strong>RISC-V 桌面整理系统：</strong>将 YOLOv5s、基于 DeepSeek 的任务规划与 SCARA 机械臂连接起来，采用量化、剪枝和面向硬件的数据布局在 EIC7700 NPU 上部署。项目测试中的推理延迟为 3 ms。</li>
+        </ul>
+        <h3>创业与荣誉</h3>
+        <p>作为南京轻柠感知科技联合创始人，我负责智能鞋垫项目的 AI 开发，参与足底压力与步态数据处理、模型分析及原型集成，探索面向糖尿病早筛的辅助方法。诊断准确性与临床效用仍需验证。</p>
+        <p>代表性荣誉包括国家奖学金、江苏新时代杰出青年荣誉、大学生集成电路创新创业大赛国家级二等奖、RoboMaster RMUL 江苏站季军，以及中国机器人及 RoboCup 中国赛国家级三等奖。</p>
+        <p><a href="#page-content" lang="en">Back to English</a></p>
+      </section>
       <footer>
-        <span>© 2026 Jiahao Zheng · Updated October 2026</span>
+        <span>© 2026 Jiahao Zheng · Updated November 2026</span>
         <a href="/legacy/">Previous homepage</a>
       </footer>
     </div>
