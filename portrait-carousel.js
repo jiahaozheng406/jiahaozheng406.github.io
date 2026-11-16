@@ -40,8 +40,8 @@ if (host) {
     const signature = document.createElement('span');
     signature.className = 'profile-signature';
     const image = document.createElement('img');
-    image.src = new URL('images/signature.png', import.meta.url);
-    image.alt = '郑家浩'; image.width = 1890; image.height = 900;
+    image.src = new URL('images/signature-handwritten.png', import.meta.url);
+    image.alt = '郑家浩'; image.width = 245; image.height = 127;
     signature.append(image);
     chineseName.firstChild.replaceWith(signature);
   }
