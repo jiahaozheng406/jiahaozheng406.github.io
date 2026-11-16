@@ -6,7 +6,7 @@
 @media(max-width:760px) { .profile-social { justify-content:flex-start; flex-wrap:wrap; gap:8px 12px; } }
 .profile .chinese-name { display:flex; align-items:center; justify-content:center; gap:8px; }
 .profile-signature { position:relative; display:inline-block; width:112px; height:40px; overflow:hidden; flex:none; }
-.profile-signature img { position:absolute; width:174px; height:auto; max-width:none; left:-31px; top:-23.5px; }
+.profile-signature img { position:absolute; width:149px; height:auto; max-width:none; left:-18px; top:-18px; }
 @media(max-width:760px) { .profile .chinese-name { justify-content:flex-start; flex-wrap:wrap; } }
 @media(min-width:761px) {
   .focus-carousel .portrait-stage { aspect-ratio:240 / 340; }
