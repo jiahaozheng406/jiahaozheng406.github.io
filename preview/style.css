@@ -106,7 +106,8 @@ strong { font-weight: 700; color: var(--ink); }
 .work .meta { border-left: 2px solid var(--line); padding-left: 10px; margin: 8px 0 12px; }
 .meta strong { color: #171b1f; font-weight: 750; font-size: 14px; font-style: normal; }
 .meta em { color: #505960; font-size: 13px; }
-#venture > .meta { font-size: 13px; line-height: 1.65; margin-bottom: 18px; }
+#venture > .meta { font-size: 13px; line-height: 1.65; margin-bottom: 6px; }
+#venture-funding { margin-bottom: 8px; }
 #venture > .meta strong { font-size: 15px; }
 .metric { font-family: Consolas, "Courier New", monospace; font-weight: 700; color: #171b1f; font-variant-numeric: tabular-nums; }
 .result img { display: block; width: 100%; height: auto; object-fit: contain; }
